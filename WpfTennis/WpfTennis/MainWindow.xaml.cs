@@ -117,6 +117,10 @@ namespace WpfTennis
                 MessageBox.Show("Charger un club avant toutes actions");
             }
         }
+        private void btnModuleStatistiques_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
 
         private void btnSauvegarde_Click(object sender, RoutedEventArgs e)
         {
@@ -277,6 +281,7 @@ namespace WpfTennis
             return save;
 
         }
+
 
         #endregion
 

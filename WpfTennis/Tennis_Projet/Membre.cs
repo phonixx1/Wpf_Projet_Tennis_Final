@@ -8,13 +8,14 @@ using System.ComponentModel;
 
 namespace ConsoleApp1
 {
-    public class Membre : Personne,IComparable<Membre>,IEquatable<Membre>
+    public delegate int Comparison(Membre x, Membre y);   // delegation tri 
+    public class Membre : Personne,IComparable<Membre>,IEquatable<Membre>, IToString
     {
 
         double competition = double.NaN; // NaN si pas de compet
 
         //List<Equipe_Competition> equipes=new Liste<Equipe_Competittion>(); // liste des equipes dans lesquelles le joueur est
-                                               
+                                             
         int argent_total_compte_membre; // l'argent que le membre a mis sur son compte ( ca peut etre pour payer la cotis ou evenements)
 
         bool cotisastion_payee; // true si payee false sinn
@@ -225,6 +226,30 @@ namespace ConsoleApp1
         #endregion
         
         #region Comparaison
+        void Trier_En_Fct_De(List<Membre> listeATrier,string parametre)           /////  UTILISATION delegate pour tri
+        {
+            Comparison<Membre> compare;
+            if (parametre=="nom")
+            {
+                listeATrier.Sort();
+            }
+            else if(parametre == "classement")
+            {
+                compare = new Comparison<Membre>(Comparaison_classement);
+                listeATrier.Sort(compare);
+            }
+            else if(parametre == "sexe")
+            {
+                compare = new Comparison<Membre>(Comparaison_sexe);
+                listeATrier.Sort(compare);
+            }
+            else if(parametre == "cotisation")
+            {
+                compare = new Comparison<Membre>(Comparaison_cotisation);
+                listeATrier.Sort(compare);
+            }
+
+        }
         public int CompareTo(Membre other) //^par nom
         {
             return (this.nom + this.prenom).CompareTo((other.nom + other.prenom));

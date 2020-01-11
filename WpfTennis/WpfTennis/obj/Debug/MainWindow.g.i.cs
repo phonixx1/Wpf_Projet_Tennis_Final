@@ -186,6 +186,12 @@ namespace WpfTennis {
             return;
             case 7:
             this.btnModuleStatistiques = ((System.Windows.Controls.Button)(target));
+            
+            #line 20 "..\..\MainWindow.xaml"
+            this.btnModuleStatistiques.Click += new System.Windows.RoutedEventHandler(this.btnModuleStatistiques_Click);
+            
+            #line default
+            #line hidden
             return;
             case 8:
             this.btnModuleAutre = ((System.Windows.Controls.Button)(target));

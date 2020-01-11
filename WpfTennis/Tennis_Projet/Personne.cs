@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    public abstract class Personne: IEquatable<Personne>
+    public abstract class Personne: IEquatable<Personne>, IToString
     {
         protected string nom;
         protected string prenom;

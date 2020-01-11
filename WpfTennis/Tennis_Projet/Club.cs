@@ -8,7 +8,7 @@ using System.Reflection;
 
 namespace ConsoleApp1
 {
-    public class Club: IComparable<Club>
+    public class Club: IComparable<Club>,IToString
     {
         string nom_du_club;
         string adresse;
@@ -17,6 +17,7 @@ namespace ConsoleApp1
         List<Personne_Administration> groupe_administratif;
         List<Entraineur> liste_entraineur;
         List<Membre> liste_membre;
+        //List<Competition> liste_compet=new List<Competition>();
 
         #region Constructeurs
         public Club(string nom_du_club, string adresse, string ville, int code_postal)
@@ -94,5 +95,7 @@ namespace ConsoleApp1
         {
             return this.nom_du_club.CompareTo(other.nom_du_club);
         }
+
+        
     }
 }
