@@ -1,0 +1,31 @@
+﻿<Window x:Class="WpfTennis.FenAjoutMembre"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfTennis"
+        mc:Ignorable="d"
+        Title="FenAjoutMembre" Height="625" Width="600">
+    <Grid>
+        <TextBox Name="txtBoxNom" HorizontalAlignment="Left" Height="25" Margin="300,20,0,0" TextWrapping="Wrap" Text="Nom" VerticalAlignment="Top" Width="200"/>
+        <TextBox Name="txtBoxPrenom" HorizontalAlignment="Left" Height="25" Margin="300,80,0,0" TextWrapping="Wrap" Text="Prenom" VerticalAlignment="Top" Width="200"/>
+        <TextBox Name="txtBoxSexe" HorizontalAlignment="Left" Height="25" Margin="300,140,0,0" TextWrapping="Wrap" Text="sexe" VerticalAlignment="Top" Width="200"/>
+        <TextBox Name="txtBoxAdresse" HorizontalAlignment="Left" Height="25" Margin="300,200,0,0" TextWrapping="Wrap" Text="adresse" VerticalAlignment="Top" Width="200"/>
+        <TextBox Name="txtBoxVille" HorizontalAlignment="Left" Height="25" Margin="300,260,0,0" TextWrapping="Wrap" Text="ville" VerticalAlignment="Top" Width="200"/>
+        <TextBox Name="txtBoxNaissance" HorizontalAlignment="Left" Height="25" Margin="300,320,0,0" TextWrapping="Wrap" Text="naissance" VerticalAlignment="Top" Width="200"/>
+        <TextBox Name="txtBoxArgent" HorizontalAlignment="Left" Height="25" Margin="300,380,0,0" TextWrapping="Wrap" Text="argentdepart" VerticalAlignment="Top" Width="200"/>
+        <TextBox Name="txtBoxCompet" HorizontalAlignment="Left" Height="25" Margin="300,440,0,0" TextWrapping="Wrap" Text="compet" VerticalAlignment="Top" Width="200"/>
+        <TextBox Name="txtBoxTel" HorizontalAlignment="Left" Height="25" Margin="300,500,0,0" TextWrapping="Wrap" Text="Telephone" VerticalAlignment="Top" Width="200"/>
+        <Button Name="btnValidation" Click="btnValidation_Click"  HorizontalAlignment="Left" Margin="215,551,0,0" VerticalAlignment="Top" Width="146" Height="34">Valider</Button>
+        <Label Content="Exemple format :" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top" Height="31" Width="104" Foreground="Green" FontWeight="Bold"/>
+        <Label Content="XXXXX" HorizontalAlignment="Left" Margin="143,20,0,0" VerticalAlignment="Top" Height="25" Width="100"  Foreground="Green"/>
+        <Label Content="XXXXX" HorizontalAlignment="Left" Margin="143,80,0,0" VerticalAlignment="Top" Height="25" Width="100"  Foreground="Green"/>
+        <Label Content="M ou F" HorizontalAlignment="Left" Margin="143,140,0,0" VerticalAlignment="Top" Height="25" Width="100" Foreground="Green"/>
+        <Label Content="XXXXX" HorizontalAlignment="Left" Margin="143,200,0,0" VerticalAlignment="Top" Height="25" Width="100" Foreground="Green"/>
+        <Label Content="XXXXX" HorizontalAlignment="Left" Margin="143,260,0,0" VerticalAlignment="Top" Height="25" Width="100" Foreground="Green"/>
+        <Label Content="XX/XX/XXXX" HorizontalAlignment="Left" Margin="143,320,0,0" VerticalAlignment="Top" Height="25" Width="100" Foreground="Green"/>
+        <Label Content="Type =int" HorizontalAlignment="Left" Margin="143,380,0,0" VerticalAlignment="Top" Height="25" Width="100" Foreground="Green"/>
+        <Label Content="'NaN' si pas de compet, Type=doube sinon(ex :4,6)" HorizontalAlignment="Left" Margin="10,440,0,0" VerticalAlignment="Top" Height="25" Width="233" Foreground="Green" FontSize="10"/>
+        <Label Content="0XXXXXXXXX" HorizontalAlignment="Left" Margin="143,500,0,0" VerticalAlignment="Top" Height="25" Width="100" Foreground="Green"/>
+    </Grid>
+</Window>
