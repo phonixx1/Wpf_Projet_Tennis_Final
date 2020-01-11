@@ -124,7 +124,7 @@ namespace WpfTennis
 
         private void btnSauvegarde_Click(object sender, RoutedEventArgs e)
         {
-            if(SaveListeMembre()&& SaveListeAdministration())
+            if(SaveListeMembre()&& SaveListeAdministration()&& SaveListeEntraineur())
             {
                 MessageBox.Show("Save reussie");
             }
@@ -202,6 +202,100 @@ namespace WpfTennis
             return save;
 
         }
+        bool SaveListeEntraineur()
+        {
+            Excel.Application appExcel = null;
+            Excel._Workbook workBook = null;
+            Excel._Worksheet workSheet = null;
+
+            int nbEntraineurs;
+            bool save = false;
+            string nom_club;
+            if (this.club != null)
+            {
+                nom_club = club.Nom;
+                try
+                {
+
+                    appExcel = new Excel.Application();
+                    appExcel.Visible = false;
+
+                    //Get a new workbook.
+                    workBook = (Excel._Workbook)(appExcel.Workbooks.Open(Environment.CurrentDirectory.ToString() + "/" + nom_club + "/FichierEntraineur" + nom_club + ".xlsx"));
+                    workSheet = (Excel._Worksheet)workBook.ActiveSheet;
+
+
+                    nbEntraineurs = this.club.Liste_Entraineur.Count;
+                    workSheet.Cells[1, 1].Value = nbEntraineurs;
+
+
+                    for (int i = 0; i < nbEntraineurs; i++)
+                    {
+                        this.club.Liste_Entraineur[i].Club_Affilie = this.club;
+                        workSheet.Cells[i + 2, 1].Value = this.club.Liste_Entraineur[i].Nom;
+                        workSheet.Cells[i + 2, 2].Value = this.club.Liste_Entraineur[i].Prenom;
+                        workSheet.Cells[i + 2, 3].Value = this.club.Liste_Entraineur[i].Sexe;
+                        workSheet.Cells[i + 2, 4].Value = this.club.Liste_Entraineur[i].Adresse;
+                        workSheet.Cells[i + 2, 5].Value = this.club.Liste_Entraineur[i].Ville;
+                        workSheet.Cells[i + 2, 6].Value = this.club.Liste_Entraineur[i].Date_naissance;
+                        workSheet.Cells[i + 2, 7].Value = this.club.Liste_Entraineur[i].Numero_Telephone;
+                        workSheet.Cells[i + 2, 8].Value = this.club.Nom;
+                        workSheet.Cells[i + 2, 9].Value = this.club.Liste_Entraineur[i].Argent_membre;
+                        if (this.club.Liste_Entraineur[i].Competition.ToString() == "NaN")
+                        {
+                            workSheet.Cells[i + 2, 10].Value = Convert.ToString(this.club.Liste_Entraineur[i].Competition);
+                        }
+                        else
+                        {
+                            workSheet.Cells[i + 2, 10].Value = this.club.Liste_Entraineur[i].Competition;
+                        }
+                        if (this.club.Liste_Entraineur[i].Cotisation == true)
+                        {
+                            workSheet.Cells[i + 2, 11].Value = "O";
+                        }
+                        else
+                        {
+                            workSheet.Cells[i + 2, 11].Value = "F";
+                        }
+                        if (this.club.Liste_Entraineur[i].Statut_Salarie == true)
+                        {
+                            workSheet.Cells[i + 2, 12].Value = "O";
+                            workSheet.Cells[i + 2, 13].Value =this.club.Liste_Entraineur[i].Date_Entree;
+                            workSheet.Cells[i + 2, 14].Value = this.club.Liste_Entraineur[i].Salaire;
+                            workSheet.Cells[i + 2, 15].Value = this.club.Liste_Entraineur[i].CoordoneesBancaire;
+                        }
+                        else
+                        {
+                            workSheet.Cells[i + 2, 12].Value = "F";
+                            workSheet.Cells[i + 2, 13].Value = null;
+                            workSheet.Cells[i + 2, 14].Value = null;
+                            workSheet.Cells[i + 2, 15].Value = null;
+                        }
+
+                    }
+                    save = true;
+
+                }
+                catch (Exception theException)
+                {
+                    String errorMessage;
+                    errorMessage = "Error: ";
+                    errorMessage = String.Concat(errorMessage, theException.Message);
+                    errorMessage = String.Concat(errorMessage, " Line: ");
+                    errorMessage = String.Concat(errorMessage, theException.Source);
+                }
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(workSheet);
+                workBook.Close(true, Missing.Value, Missing.Value);
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(workBook);
+                //workBook = null;
+                appExcel.Quit();
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(appExcel);
+            }
+
+            return save;
+
+        }
+
         bool SaveListeMembre()
         {
             Excel.Application appExcel=null;
