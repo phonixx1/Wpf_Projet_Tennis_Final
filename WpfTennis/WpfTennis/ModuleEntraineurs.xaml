@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfTennis"
         mc:Ignorable="d"
-        Title="ModuleEntraineurs" Height="700" Width="1200">
+        Title="ModuleEntraineurs" Height="650" Width="1275">
     <Grid>
-        <DataGrid x:Name="grilleDonnees" HorizontalAlignment="Left" Height="272" Margin="10,85,0,0" VerticalAlignment="Top" Width="1174" ItemsSource="{Binding Path=OcEntraineur,Mode=TwoWay }"  ></DataGrid>
-        <Button Name="btnRetourMainWindow" Click="btnRetourMainWindow_Click" HorizontalAlignment="Left" Margin="447,600,0,0" VerticalAlignment="Top" Width="150" Height="40" Foreground="Red" FontWeight="Bold">Retour Menu Principal</Button>
-        <Button Name="btnEffacer" Click="btnEffacer_Click" Content="Effacer Entraineur" HorizontalAlignment="Left" Height="48" Margin="60,534,0,0" VerticalAlignment="Top" Width="140"/>
-        <Button Name="btnAjout" Click="btnAjout_Click"  Content="Ajouter Entraineur" HorizontalAlignment="Left" Margin="60,446,0,0" VerticalAlignment="Top" Width="140" Height="48"/>
+        <DataGrid x:Name="grilleDonnees" HorizontalAlignment="Left" Height="312" Margin="10,85,0,0" VerticalAlignment="Top" Width="1249" ItemsSource="{Binding Path=OcEntraineur,Mode=TwoWay }"  ></DataGrid>
+        <Button Name="btnRetourMainWindow" Click="btnRetourMainWindow_Click" HorizontalAlignment="Left" Margin="502,557,0,0" VerticalAlignment="Top" Width="150" Height="40" Foreground="Red" FontWeight="Bold">Retour Menu Principal</Button>
+        <Button Name="btnEffacer" Click="btnEffacer_Click" Content="Effacer Entraineur" HorizontalAlignment="Left" Height="48" Margin="785,466,0,0" VerticalAlignment="Top" Width="140"/>
+        <Button Name="btnAjout" Click="btnAjout_Click"  Content="Ajouter Entraineur" HorizontalAlignment="Left" Margin="231,466,0,0" VerticalAlignment="Top" Width="140" Height="48"/>
         <Button Content="Aides et explications" Name="btnAide" Click="btnAide_Click" HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="449,10,0,0" Width="148" Height="51" Foreground="Red" FontWeight="Bold"/>
     </Grid>
 </Window>

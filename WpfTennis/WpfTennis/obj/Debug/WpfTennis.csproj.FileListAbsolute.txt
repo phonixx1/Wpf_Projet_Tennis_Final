@@ -64,3 +64,7 @@ D:\Sacha\Documents\Informatique\GitHub\Wpf_Projet_Tennis_Final\WpfTennis\WpfTenn
 D:\Sacha\Documents\Informatique\GitHub\Wpf_Projet_Tennis_Final\WpfTennis\WpfTennis\obj\Debug\WpfTennis.csproj.CopyComplete
 D:\Sacha\Documents\Informatique\GitHub\Wpf_Projet_Tennis_Final\WpfTennis\WpfTennis\obj\Debug\WpfTennis.exe
 D:\Sacha\Documents\Informatique\GitHub\Wpf_Projet_Tennis_Final\WpfTennis\WpfTennis\obj\Debug\WpfTennis.pdb
+D:\Sacha\Documents\Informatique\GitHub\Wpf_Projet_Tennis_Final\WpfTennis\WpfTennis\obj\Debug\FenAjoutEntraineur.g.cs
+D:\Sacha\Documents\Informatique\GitHub\Wpf_Projet_Tennis_Final\WpfTennis\WpfTennis\obj\Debug\ModuleStatistiques.g.cs
+D:\Sacha\Documents\Informatique\GitHub\Wpf_Projet_Tennis_Final\WpfTennis\WpfTennis\obj\Debug\FenAjoutEntraineur.baml
+D:\Sacha\Documents\Informatique\GitHub\Wpf_Projet_Tennis_Final\WpfTennis\WpfTennis\obj\Debug\ModuleStatistiques.baml

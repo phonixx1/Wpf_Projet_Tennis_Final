@@ -82,7 +82,13 @@ namespace WpfTennis
 
         private void btnAjout_Click(object sender, RoutedEventArgs e)
         {
-
+            FenAjoutEntraineur ajoutEntraineur = new FenAjoutEntraineur();
+            ajoutEntraineur.Owner = this;
+            ajoutEntraineur.ShowDialog();
+            if (ajoutEntraineur.DialogResult == true)
+            {
+                ocEntraineur.Add(ajoutEntraineur.AAjouter);
+            }
         }
     }
 }

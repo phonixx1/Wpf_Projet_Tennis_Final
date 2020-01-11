@@ -37,6 +37,10 @@ namespace ConsoleApp1
                 this.coordonneesBancaire = banque;
                 
             }
+            else
+            {
+
+            }
 
         }
         #region Proprietes
