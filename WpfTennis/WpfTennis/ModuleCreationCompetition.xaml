@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfTennis"
         mc:Ignorable="d"
-        Title="ModuleCreationCompetition" Height="450" Width="800">
+        Title="ModuleCreationCompetition" Height="700" Width="1100">
     <Grid>
+        
+        <Button Name="btnRetourMainWindow" Click="btnRetourMainWindow_Click"  HorizontalAlignment="Left" Margin="447,600,0,0" VerticalAlignment="Top" Width="150" Height="40" Foreground="Red" FontWeight="Bold">Retour Menu Principal</Button>
+        <Button Name="btnEffacer" Content="a set" HorizontalAlignment="Left" Height="48" Margin="60,534,0,0" VerticalAlignment="Top" Width="140"/>
+        <Button Name="btnAjout" Click="btnAjout_Click"  Content="Ajouter Equipe" HorizontalAlignment="Left" Margin="60,446,0,0" VerticalAlignment="Top" Width="140" Height="48"/>
         
     </Grid>
 </Window>

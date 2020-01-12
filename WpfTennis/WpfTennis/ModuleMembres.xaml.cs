@@ -31,13 +31,13 @@ namespace WpfTennis
         }
         public ModuleMembres(List<Membre> listeMembre)
         {
-            
+
             InitializeComponent();
             this.liste_membre = listeMembre;
             ocMembre = new ObservableCollection<Membre>(this.liste_membre);
             DataContext = this;
-        }
 
+        }
         public List<Membre> ListeMembreAff
         {
             get { return liste_membre; }

@@ -121,6 +121,32 @@ namespace WpfTennis
         {
 
         }
+        private void btnModuleCompetitions_Click(object sender, RoutedEventArgs e)
+        {
+            Competition compet = null;
+            if (this.club != null)
+            {
+                FenAjoutCompetition ajoutCompet = new FenAjoutCompetition(this.club);
+                this.Hide();
+                ajoutCompet.Owner = this;
+                ajoutCompet.ShowDialog();
+                if (ajoutCompet.IsActive == false&& ajoutCompet.DialogResult==true)
+                {
+                    compet = ajoutCompet.ACreer;
+                    ModuleCreationCompetition creationResteDeLaCompet = new ModuleCreationCompetition(compet, this.club.Liste_Membre);
+                    this.Hide();
+                    creationResteDeLaCompet.Owner = this;
+                    creationResteDeLaCompet.ShowDialog();
+                    this.ShowDialog();
+
+                }
+                this.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Charger un club avant toutes actions");
+            }
+        }
 
         private void btnSauvegarde_Click(object sender, RoutedEventArgs e)
         {
@@ -375,6 +401,7 @@ namespace WpfTennis
             return save;
 
         }
+
 
 
         #endregion

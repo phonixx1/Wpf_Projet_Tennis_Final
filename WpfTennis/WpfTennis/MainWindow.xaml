@@ -16,7 +16,7 @@
         <Button Name="btnModuleMembres" Click="btnModuleMembres_Click" HorizontalAlignment="Left" Margin="129,175,0,0" VerticalAlignment="Top" Width="180" Height="60">Module Membres</Button>
         <Button Name="btnModuleAdministration" Click="btnModuleAdministration_Click"  HorizontalAlignment="Left" Margin="400,175,0,0" VerticalAlignment="Top" Width="180" Height="60">Module Administration</Button>
         <Button Name="btnModuleEntraineur" Click="btnModuleEntraineur_Click"  HorizontalAlignment="Left" Margin="681,175,0,0" VerticalAlignment="Top" Width="180" Height="60">Module Entraineur</Button>
-        <Button Name="btnModuleCompetitions" HorizontalAlignment="Left" Margin="400,279,0,0" VerticalAlignment="Top" Width="180" Height="60">Module Competitions</Button>
+        <Button Name="btnModuleCompetitions" Click="btnModuleCompetitions_Click" HorizontalAlignment="Left" Margin="400,279,0,0" VerticalAlignment="Top" Width="180" Height="60">Module Competitions</Button>
         <Button Name="btnModuleStatistiques" Click="btnModuleStatistiques_Click" HorizontalAlignment="Left" Margin="129,279,0,0" VerticalAlignment="Top" Width="180" Height="60">Module Statistiques</Button>
         <Button Name="btnModuleAutre" HorizontalAlignment="Left" Margin="681,279,0,0" VerticalAlignment="Top" Width="180" Height="60">Module Autre</Button>
         <Button Name="btnSauvegarde" Click="btnSauvegarde_Click" HorizontalAlignment="Left" Margin="681,500,0,0" VerticalAlignment="Top" Width="180" Height="60">Sauvegarde du club (database)</Button>

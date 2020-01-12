@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    abstract class Evenement: IComparable<Evenement>
+    public abstract class Evenement: IComparable<Evenement>
     {
         protected string nom_de_evenement; // tous les evenements on un titre ou nom ( exp "stage_ete_2020" "tournoi_amical_du_dimanche")
         protected DateTime date_debut_evenement;

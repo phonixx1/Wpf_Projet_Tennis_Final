@@ -19,7 +19,7 @@
         <Button Name="btnValidation" Click="btnValidation_Click"  HorizontalAlignment="Left" Margin="215,551,0,0" VerticalAlignment="Top" Width="146" Height="34">Valider</Button>
         <Label Content="Exemple format :" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top" Height="31" Width="104" Foreground="Green" FontWeight="Bold"/>
         <Label Content="XXXXX" HorizontalAlignment="Left" Margin="143,20,0,0" VerticalAlignment="Top" Height="25" Width="100"  Foreground="Green"/>
-        <Label Content="Type = int" HorizontalAlignment="Left" Margin="143,80,0,0" VerticalAlignment="Top" Height="25" Width="100"  Foreground="Green"/>
+        <Label Content="Prix : Type = int" HorizontalAlignment="Left" Margin="143,80,0,0" VerticalAlignment="Top" Height="25" Width="100"  Foreground="Green"/>
         <Label Content="XX/XX/XXXX" HorizontalAlignment="Left" Margin="143,140,0,0" VerticalAlignment="Top" Height="25" Width="100" Foreground="Green"/>
         <Label Content="XX/XX/XXXX" HorizontalAlignment="Left" Margin="143,200,0,0" VerticalAlignment="Top" Height="25" Width="100" Foreground="Green"/>
         <Label Content="simple homme ou simple femme" HorizontalAlignment="Left" Margin="62,242,0,0" VerticalAlignment="Top" Height="25" Width="233" Foreground="Green"/>
@@ -29,7 +29,7 @@
         <Label Content="equipe homme ou equipe femme" HorizontalAlignment="Left" Margin="62,272,0,0" VerticalAlignment="Top" Height="43" Width="199" Foreground="Green"/>
         <Label Content="double homme ou double femme" HorizontalAlignment="Left" Margin="62,256,0,0" VerticalAlignment="Top" Height="30" Width="199" Foreground="Green"/>
         <Label Content="regionnal,departemental,national.." HorizontalAlignment="Left" Margin="27,382,0,0" VerticalAlignment="Top" Width="216" Foreground="Green"/>
-        <Label Content="Type = int" HorizontalAlignment="Left" Margin="27,440,0,0" VerticalAlignment="Top" Width="216" Foreground="Green"/>
+        <Label Content="Nb joueur :Type = int" HorizontalAlignment="Left" Margin="27,440,0,0" VerticalAlignment="Top" Width="216" Foreground="Green"/>
         <Label Content="Type = double si classement =15/4 mettre 15,4" HorizontalAlignment="Left" Margin="10,500,0,0" VerticalAlignment="Top" Width="233" Foreground="Green" FontSize="10"/>
 
     </Grid>

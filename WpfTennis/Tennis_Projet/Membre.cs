@@ -14,13 +14,15 @@ namespace ConsoleApp1
 
         double competition = double.NaN; // NaN si pas de compet
 
-        //List<Equipe_Competition> equipes=new Liste<Equipe_Competittion>(); // liste des equipes dans lesquelles le joueur est
+        List<Equipe_Competition> equipes=new List<Equipe_Competition>(); // liste des equipes dans lesquelles le joueur est
                                              
         int argent_total_compte_membre; // l'argent que le membre a mis sur son compte ( ca peut etre pour payer la cotis ou evenements)
 
         bool cotisastion_payee; // true si payee false sinn
 
         Club nom_du_club_affilie;// club où le joueur est affilié
+
+        int nb_victoires=0;
 
 
         #region Constructeurs
@@ -113,10 +115,15 @@ namespace ConsoleApp1
                 this.cotisastion_payee = value;
             }
         }
-        /*public List<Equipe_Competition> Equipes
+        public int Nb_Victoires
+        {
+            get { return nb_victoires; }
+           
+        }
+        public List<Equipe_Competition> Equipes
         {
             get { return equipes; }
-        }*/
+        }
 
         #endregion
         public override string ToString()
@@ -131,6 +138,10 @@ namespace ConsoleApp1
                 return base.ToString() + "appartient au club :" + this.nom_du_club_affilie.ToString() + " et son classement est :" + this.competition + " " + this.sexe;
 
             }
+        }
+        public void Ajouter_Victore()
+        {
+            nb_victoires = nb_victoires + 1;
         }
         #region Paiement et cotisation
         bool Essai_Paiement_Cotisation() // return true si la cotis est payé

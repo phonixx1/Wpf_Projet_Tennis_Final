@@ -1,0 +1,15 @@
+﻿<Window x:Class="WpfTennis.FenAjoutEquipeCompet"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfTennis"
+        mc:Ignorable="d"
+        Title="FenAjoutEquipeCompet" Height="700" Width="1100">
+    <Grid>
+        <DataGrid x:Name="grilleDonnees" HorizontalAlignment="Left" Height="272" Margin="10,85,0,0" VerticalAlignment="Top" Width="1074" ItemsSource="{Binding Path=OcMembre,Mode=TwoWay }"  ></DataGrid>
+        <Button Name="btnAjout" Click="btnAjout_Click"  Content="Ajouter Joueur a lequipe" HorizontalAlignment="Left" Margin="451,512,0,0" VerticalAlignment="Top" Width="140" Height="48"/>
+        <Button Name="btnRetour" Click="btnRetour_Click"  HorizontalAlignment="Left" Margin="447,600,0,0" VerticalAlignment="Top" Width="150" Height="40" Foreground="Red" FontWeight="Bold">Retour Menu Compet</Button>
+        <Label Name="labelNbJoueur" HorizontalAlignment="Left" Margin="447,419,0,0" VerticalAlignment="Top" Height="49" Width="144"/>
+    </Grid>
+</Window>
