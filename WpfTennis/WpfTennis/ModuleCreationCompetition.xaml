@@ -5,12 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfTennis"
         mc:Ignorable="d"
-        Title="ModuleCreationCompetition" Height="700" Width="1100">
+        Title="ModuleCreationCompetition" Height="600" Width="800">
     <Grid>
-        
-        <Button Name="btnRetourMainWindow" Click="btnRetourMainWindow_Click"  HorizontalAlignment="Left" Margin="447,600,0,0" VerticalAlignment="Top" Width="150" Height="40" Foreground="Red" FontWeight="Bold">Retour Menu Principal</Button>
-        <Button Name="btnEffacer" Content="a set" HorizontalAlignment="Left" Height="48" Margin="60,534,0,0" VerticalAlignment="Top" Width="140"/>
-        <Button Name="btnAjout" Click="btnAjout_Click"  Content="Ajouter Equipe" HorizontalAlignment="Left" Margin="60,446,0,0" VerticalAlignment="Top" Width="140" Height="48"/>
-        
+
+        <Button Name="btnRetourMainWindow" Click="btnRetourMainWindow_Click"  HorizontalAlignment="Left" Margin="329,495,0,0" VerticalAlignment="Top" Width="150" Height="40" Foreground="Red" FontWeight="Bold">Retour Menu Principal</Button>
+        <Button Name="btnStrat" Click="btnStrat_Click"  Content="a set" HorizontalAlignment="Left" Height="48" Margin="539,257,0,0" VerticalAlignment="Top" Width="140"/>
+        <Button Name="btnAjout" Click="btnAjout_Click"  Content="Ajouter Equipe" HorizontalAlignment="Left" Margin="134,257,0,0" VerticalAlignment="Top" Width="140" Height="48"/>
+        <Label Content="Il faut un nombre pair d'equipe" HorizontalAlignment="Left" Margin="300,34,0,0" VerticalAlignment="Top" Width="209" FontWeight="Bold" Height="42"/>
+        <Label Name="nbEquipe" HorizontalAlignment="Left" Margin="329,76,0,0" VerticalAlignment="Top" Height="35" Width="120"/>
+
     </Grid>
 </Window>

@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="ModuleEntraineurs" Height="650" Width="1275">
     <Grid>
-        <DataGrid x:Name="grilleDonnees" HorizontalAlignment="Left" Height="312" Margin="10,85,0,0" VerticalAlignment="Top" Width="1249" ItemsSource="{Binding Path=OcEntraineur,Mode=TwoWay }"  ></DataGrid>
+        <DataGrid x:Name="grilleDonnees" HorizontalAlignment="Left" Height="312" Margin="10,85,0,0"  AutoGeneratingColumn="dataGrid1_AutoGeneratingColumn" VerticalAlignment="Top" Width="1249" ItemsSource="{Binding Path=OcEntraineur,Mode=TwoWay }"  ></DataGrid>
         <Button Name="btnRetourMainWindow" Click="btnRetourMainWindow_Click" HorizontalAlignment="Left" Margin="502,557,0,0" VerticalAlignment="Top" Width="150" Height="40" Foreground="Red" FontWeight="Bold">Retour Menu Principal</Button>
         <Button Name="btnEffacer" Click="btnEffacer_Click" Content="Effacer Entraineur" HorizontalAlignment="Left" Height="48" Margin="785,466,0,0" VerticalAlignment="Top" Width="140"/>
         <Button Name="btnAjout" Click="btnAjout_Click"  Content="Ajouter Entraineur" HorizontalAlignment="Left" Margin="231,466,0,0" VerticalAlignment="Top" Width="140" Height="48"/>

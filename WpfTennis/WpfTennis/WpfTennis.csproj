@@ -124,6 +124,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ModuleEnCoursCompetition.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ModuleEntraineurs.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -143,6 +147,9 @@
     </Compile>
     <Compile Include="ModuleCreationCompetition.xaml.cs">
       <DependentUpon>ModuleCreationCompetition.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleEnCoursCompetition.xaml.cs">
+      <DependentUpon>ModuleEnCoursCompetition.xaml</DependentUpon>
     </Compile>
     <Compile Include="ModuleEntraineurs.xaml.cs">
       <DependentUpon>ModuleEntraineurs.xaml</DependentUpon>

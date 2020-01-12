@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfTennis"
         mc:Ignorable="d"
-        Title="ModuleStatistiques" Height="450" Width="800">
+        Title="ModuleStatistiques" Height="700" Width="800">
     <Grid>
-        
+        <Label Content="!!! Contrairement aux Membres ,administrateurs et entraineurs les competitions sont uniquement enregistrées pendant l'execution!!!" HorizontalAlignment="Left" Margin="20,33,-0.4,0" VerticalAlignment="Top" Height="44" Width="774"  FontWeight="Bold" Background="White" Foreground="Red"/>
+        <Label Name="participationCompet" HorizontalAlignment="Left" Margin="10,134,0,0" VerticalAlignment="Top" Height="63" Width="774"/>
+        <Label Content="Stats :" HorizontalAlignment="Left" Margin="43,82,0,0" VerticalAlignment="Top" Height="56" Width="102" FontWeight="Bold"/>
+        <DataGrid x:Name="grilleDonnees" HorizontalAlignment="Left" Height="179" AutoGeneratingColumn="dataGrid1_AutoGeneratingColumn" Margin="43,235,0,0" VerticalAlignment="Top" Width="702" ItemsSource="{Binding Path=OcMembre,Mode=TwoWay }"  ></DataGrid>
+
     </Grid>
 </Window>

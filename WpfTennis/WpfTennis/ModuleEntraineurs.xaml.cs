@@ -79,7 +79,17 @@ namespace WpfTennis
         {
             if (this.PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs(Propriete));
         }
-
+        private void dataGrid1_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            if (e.PropertyName == "Equipes")
+            {
+                e.Column = null;
+            }
+            if (e.PropertyName == "Club_Affilie")
+            {
+                e.Column.IsReadOnly = true;
+            }
+        }
         private void btnAjout_Click(object sender, RoutedEventArgs e)
         {
             FenAjoutEntraineur ajoutEntraineur = new FenAjoutEntraineur();

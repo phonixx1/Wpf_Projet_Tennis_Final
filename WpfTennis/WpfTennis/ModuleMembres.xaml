@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="ModuleMembres" Height="700" Width="1100">
     <Grid>
-        <DataGrid x:Name="grilleDonnees" HorizontalAlignment="Left" Height="272" Margin="10,85,0,0" VerticalAlignment="Top" Width="1074" ItemsSource="{Binding Path=OcMembre,Mode=TwoWay }"  ></DataGrid>
+        <DataGrid x:Name="grilleDonnees" HorizontalAlignment="Left" Height="272" AutoGeneratingColumn="dataGrid1_AutoGeneratingColumn" Margin="10,85,0,0" VerticalAlignment="Top" Width="1074" ItemsSource="{Binding Path=OcMembre,Mode=TwoWay }"  ></DataGrid>
         <Button Name="btnRetourMainWindow" Click="btnRetourMainWindow_Click" HorizontalAlignment="Left" Margin="447,600,0,0" VerticalAlignment="Top" Width="150" Height="40" Foreground="Red" FontWeight="Bold">Retour Menu Principal</Button>
         <Button Name="btnEffacer" Click="btnEffacer_Click" Content="Effacer Membre" HorizontalAlignment="Left" Height="48" Margin="60,534,0,0" VerticalAlignment="Top" Width="140"/>
         <Button Name="btnAjout" Click="btnAjout_Click"  Content="Ajouter Membre" HorizontalAlignment="Left" Margin="60,446,0,0" VerticalAlignment="Top" Width="140" Height="48"/>

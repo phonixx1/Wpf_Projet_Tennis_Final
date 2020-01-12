@@ -11,5 +11,6 @@
         <Button Name="btnAjout" Click="btnAjout_Click"  Content="Ajouter Joueur a lequipe" HorizontalAlignment="Left" Margin="451,512,0,0" VerticalAlignment="Top" Width="140" Height="48"/>
         <Button Name="btnRetour" Click="btnRetour_Click"  HorizontalAlignment="Left" Margin="447,600,0,0" VerticalAlignment="Top" Width="150" Height="40" Foreground="Red" FontWeight="Bold">Retour Menu Compet</Button>
         <Label Name="labelNbJoueur" HorizontalAlignment="Left" Margin="447,419,0,0" VerticalAlignment="Top" Height="49" Width="144"/>
+        <Label Content="Si vous retournez au menu compet sans une equipe complete elle ne sera pas sauvegardée" HorizontalAlignment="Left" Margin="259,10,0,0" VerticalAlignment="Top" Height="57" Width="525" FontWeight="Bold"/>
     </Grid>
 </Window>

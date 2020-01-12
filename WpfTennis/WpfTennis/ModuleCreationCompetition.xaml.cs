@@ -34,13 +34,17 @@ namespace WpfTennis
             InitializeComponent();
             this.competCree = compet;
             this.listeDesMembres = liste;
+            this.nbEquipe.Content = "Nombre d'equipe : "+Convert.ToString(compet.Equipe_participante.Count);
         }
-        
-
+        public Competition CompetCree
+        {
+            get { return this.competCree; }
+        }
 
 
         private void btnRetourMainWindow_Click(object sender, RoutedEventArgs e)
         {
+            
             this.DialogResult = true;
         }
 
@@ -55,9 +59,24 @@ namespace WpfTennis
                 if(competCree.Ajouter_Equipe(nouvelleEquipeComet.AAjouter))
                 {
                     competCree.Equipe_participante.Add(nouvelleEquipeComet.AAjouter);
+                    this.nbEquipe.Content ="Nombre d'equipe : " +Convert.ToString(competCree.Equipe_participante.Count);
                 }
             }
 
+        }
+
+        
+
+        private void btnStrat_Click(object sender, RoutedEventArgs e)
+        {
+            if(competCree.Equipe_participante.Count%2==0)
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Nombre dequipe pair on peut pas start la compet");
+            }
         }
     }
 }

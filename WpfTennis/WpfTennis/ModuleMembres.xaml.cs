@@ -86,6 +86,18 @@ namespace WpfTennis
             pageAide.Owner = this;
             pageAide.Show();
         }
+        private void dataGrid1_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            if (e.PropertyName == "Equipes")
+            {
+                e.Column = null;
+            }
+            if (e.PropertyName == "Club_Affilie")
+            {
+                e.Column.IsReadOnly = true;
+            }
+
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
         private void GenerePropertyChanged(string Propriete)

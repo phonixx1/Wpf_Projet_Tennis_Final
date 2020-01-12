@@ -8,7 +8,7 @@ namespace ConsoleApp1
 {
     public class Competition : Evenement , IEquatable<Competition>
     {
-        bool compet_fini = false;
+        bool compet_finie = false;
         Club club_organisateur;
         int tranche_age; // on peut participer tant que age >= tranche age pour le cas ou tranche > 18
                          // si tranche d'age <18 on a plein de petite tranche d'age si tranche d'age =11 alors c'est bon si le joueur a 11/12 ans
@@ -57,6 +57,10 @@ namespace ConsoleApp1
             
         }
 
+        public bool Compet_finie
+        {
+            get { return compet_finie; }
+        }
         public int Tranche_age
         {
             get { return this.tranche_age; }

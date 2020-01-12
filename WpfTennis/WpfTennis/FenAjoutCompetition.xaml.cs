@@ -44,7 +44,7 @@ namespace WpfTennis
                 string type;
                 if ((Convert.ToDateTime(txtBoxDebut.Text) <= Convert.ToDateTime(txtBoxFin.Text))&&(Convert.ToDateTime(txtBoxDebut.Text) > DateTime.Now))
                 {
-                    duree = Convert.ToDateTime(txtBoxDebut.Text) - Convert.ToDateTime(txtBoxFin.Text);
+                    duree = Convert.ToDateTime(txtBoxFin.Text)-Convert.ToDateTime(txtBoxDebut.Text);
                 }
                 else
                 {
@@ -85,7 +85,7 @@ namespace WpfTennis
                 this.DialogResult = true;
 
             }
-            catch { MessageBox.Show("Echec de l'ajout"); }
+            catch { MessageBox.Show("Echec de l'ajout. Verifier il n'y ai pas de faute de frappe"); }
         }
     }
 }

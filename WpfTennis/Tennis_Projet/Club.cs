@@ -17,7 +17,7 @@ namespace ConsoleApp1
         List<Personne_Administration> groupe_administratif;
         List<Entraineur> liste_entraineur;
         List<Membre> liste_membre;
-        //List<Competition> liste_compet=new List<Competition>();
+        List<Competition> liste_compet=new List<Competition>();
 
         #region Constructeurs
         public Club(string nom_du_club, string adresse, string ville, int code_postal)
@@ -57,6 +57,10 @@ namespace ConsoleApp1
         #endregion
 
         #region Propriétés
+        public List<Competition> Liste_compet
+        {
+            get { return liste_compet; }
+        }
         public List<Membre> Liste_Membre
         {
             get { return this.liste_membre; }

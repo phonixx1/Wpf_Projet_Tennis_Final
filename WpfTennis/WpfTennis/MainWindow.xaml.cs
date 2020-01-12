@@ -119,6 +119,19 @@ namespace WpfTennis
         }
         private void btnModuleStatistiques_Click(object sender, RoutedEventArgs e)
         {
+            if (this.club != null)
+            {
+                ModuleStatistiques modStats = new ModuleStatistiques(this.club);
+                this.Hide();
+                modStats.Owner = this;
+                modStats.ShowDialog();
+                this.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Charger un club avant toutes actions");
+            }
+
 
         }
         private void btnModuleCompetitions_Click(object sender, RoutedEventArgs e)
@@ -137,10 +150,42 @@ namespace WpfTennis
                     this.Hide();
                     creationResteDeLaCompet.Owner = this;
                     creationResteDeLaCompet.ShowDialog();
-                    this.ShowDialog();
+                    this.club.Liste_compet.Add(creationResteDeLaCompet.CompetCree);
+                    
+
+
 
                 }
                 this.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Charger un club avant toutes actions");
+            }
+        }
+        private void btnModuleCompetitionsEnCours_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.club != null)
+            {
+               if(this.club.Liste_compet.Count==0)
+                {
+                    MessageBox.Show("Aucune competition crée");
+                }
+                else
+                {
+                    ModuleEnCoursCompetition retrouverCompet = new ModuleEnCoursCompetition(this.club.Liste_compet.Count);
+                    retrouverCompet.Owner = this;
+                    retrouverCompet.ShowDialog();
+                    if(retrouverCompet.DialogResult==true)
+                    {
+                        ModuleCreationCompetition creationResteDeLaCompet = new ModuleCreationCompetition(this.club.Liste_compet[retrouverCompet.NbReturn-1], this.club.Liste_Membre);
+                        this.Hide();
+                        creationResteDeLaCompet.Owner = this;
+                        creationResteDeLaCompet.ShowDialog();
+                    }
+                    this.ShowDialog();
+
+                }
             }
             else
             {
@@ -404,8 +449,9 @@ namespace WpfTennis
 
 
 
+
         #endregion
 
-        
+       
     }
 }

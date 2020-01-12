@@ -74,3 +74,5 @@ D:\Sacha\Documents\Informatique\GitHub\Wpf_Projet_Tennis_Final\WpfTennis\WpfTenn
 D:\Sacha\Documents\Informatique\GitHub\Wpf_Projet_Tennis_Final\WpfTennis\WpfTennis\obj\Debug\ModuleCreationCompetition.baml
 D:\Sacha\Documents\Informatique\GitHub\Wpf_Projet_Tennis_Final\WpfTennis\WpfTennis\obj\Debug\FenAjoutEquipeCompet.g.cs
 D:\Sacha\Documents\Informatique\GitHub\Wpf_Projet_Tennis_Final\WpfTennis\WpfTennis\obj\Debug\FenAjoutEquipeCompet.baml
+D:\Sacha\Documents\Informatique\GitHub\Wpf_Projet_Tennis_Final\WpfTennis\WpfTennis\obj\Debug\ModuleEnCoursCompetition.g.cs
+D:\Sacha\Documents\Informatique\GitHub\Wpf_Projet_Tennis_Final\WpfTennis\WpfTennis\obj\Debug\ModuleEnCoursCompetition.baml

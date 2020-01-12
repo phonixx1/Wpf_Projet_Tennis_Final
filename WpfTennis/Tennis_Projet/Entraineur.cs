@@ -37,11 +37,7 @@ namespace ConsoleApp1
                 this.coordonneesBancaire = banque;
                 
             }
-            else
-            {
-
-            }
-
+            
         }
         #region Proprietes
        public bool Statut_Salarie
