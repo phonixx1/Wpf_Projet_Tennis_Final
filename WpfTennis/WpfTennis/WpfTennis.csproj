@@ -67,6 +67,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="FenAjoutCompetition.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="FenAjoutEntraineur.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -92,6 +96,9 @@
     <Compile Include="FenAjoutAdministration.xaml.cs">
       <DependentUpon>FenAjoutAdministration.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FenAjoutCompetition.xaml.cs">
+      <DependentUpon>FenAjoutCompetition.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FenAjoutEntraineur.xaml.cs">
       <DependentUpon>FenAjoutEntraineur.xaml</DependentUpon>
     </Compile>
@@ -103,6 +110,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ModuleAdministration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ModuleCreationCompetition.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -122,6 +133,9 @@
   <ItemGroup>
     <Compile Include="ModuleAdministration.xaml.cs">
       <DependentUpon>ModuleAdministration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleCreationCompetition.xaml.cs">
+      <DependentUpon>ModuleCreationCompetition.xaml</DependentUpon>
     </Compile>
     <Compile Include="ModuleEntraineurs.xaml.cs">
       <DependentUpon>ModuleEntraineurs.xaml</DependentUpon>

@@ -45,7 +45,10 @@
   <ItemGroup>
     <Compile Include="Club.cs" />
     <Compile Include="Entraineur.cs" />
+    <Compile Include="Equipe_Competition.cs" />
+    <Compile Include="Evenement.cs" />
     <Compile Include="IToString.cs" />
+    <Compile Include="Match.cs" />
     <Compile Include="Membre.cs" />
     <Compile Include="Personne.cs" />
     <Compile Include="Personne_Administration.cs" />

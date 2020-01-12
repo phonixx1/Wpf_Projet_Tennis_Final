@@ -1,0 +1,36 @@
+﻿<Window x:Class="WpfTennis.FenAjoutCompetition"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfTennis"
+        mc:Ignorable="d"
+        Title="FenAjoutCompetition" Height="625" Width="600">
+    <Grid>
+        <TextBox Name="txtBoxNom" HorizontalAlignment="Left" Height="25" Margin="300,20,0,0" TextWrapping="Wrap" Text="Nom de la competition" VerticalAlignment="Top" Width="200"/>
+        <TextBox Name="txtBoxPrix" HorizontalAlignment="Left" Height="25" Margin="300,80,0,0" TextWrapping="Wrap" Text="Prix" VerticalAlignment="Top" Width="200"/>
+        <TextBox Name="txtBoxDebut" HorizontalAlignment="Left" Height="25" Margin="300,140,0,0" TextWrapping="Wrap" Text="Date de debut" VerticalAlignment="Top" Width="200"/>
+        <TextBox Name="txtBoxFin" HorizontalAlignment="Left" Height="25" Margin="300,200,0,0" TextWrapping="Wrap" Text="Date de fin" VerticalAlignment="Top" Width="200"/>
+        <TextBox Name="txtBoxType" HorizontalAlignment="Left" Height="25" Margin="300,260,0,0" TextWrapping="Wrap" Text="Type de competition" VerticalAlignment="Top" Width="200"/>
+        <TextBox Name="txtBoxAge" HorizontalAlignment="Left" Height="25" Margin="300,320,0,0" TextWrapping="Wrap" Text="tranche d'age" VerticalAlignment="Top" Width="200"/>
+        <TextBox Name="txtBoxNiveau" HorizontalAlignment="Left" Height="25" Margin="300,380,0,0" TextWrapping="Wrap" Text="Niveau" VerticalAlignment="Top" Width="200"/>
+        <TextBox Name="txtBoxNbJoueur" HorizontalAlignment="Left" Height="25" Margin="300,440,0,0" TextWrapping="Wrap" Text="Nombre de joueur par equipe" VerticalAlignment="Top" Width="200"/>
+        <TextBox Name="txtBoxClassement" HorizontalAlignment="Left" Height="25" Margin="300,500,0,0" TextWrapping="Wrap" Text="Classement max" VerticalAlignment="Top" Width="200"/>
+        <Button Name="btnValidation" Click="btnValidation_Click"  HorizontalAlignment="Left" Margin="215,551,0,0" VerticalAlignment="Top" Width="146" Height="34">Valider</Button>
+        <Label Content="Exemple format :" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top" Height="31" Width="104" Foreground="Green" FontWeight="Bold"/>
+        <Label Content="XXXXX" HorizontalAlignment="Left" Margin="143,20,0,0" VerticalAlignment="Top" Height="25" Width="100"  Foreground="Green"/>
+        <Label Content="Type = int" HorizontalAlignment="Left" Margin="143,80,0,0" VerticalAlignment="Top" Height="25" Width="100"  Foreground="Green"/>
+        <Label Content="XX/XX/XXXX" HorizontalAlignment="Left" Margin="143,140,0,0" VerticalAlignment="Top" Height="25" Width="100" Foreground="Green"/>
+        <Label Content="XX/XX/XXXX" HorizontalAlignment="Left" Margin="143,200,0,0" VerticalAlignment="Top" Height="25" Width="100" Foreground="Green"/>
+        <Label Content="simple homme ou simple femme" HorizontalAlignment="Left" Margin="62,242,0,0" VerticalAlignment="Top" Height="25" Width="233" Foreground="Green"/>
+        <Label Content="Type = int Pour age inf 18 ans a tranche d'age sera l'age" HorizontalAlignment="Left" Margin="10,315,0,0" VerticalAlignment="Top" Height="30" Width="258" Foreground="Green" FontSize="10"/>
+        <Label Content="rentré +1: si int=14 alors competition pour 13/14ans" HorizontalAlignment="Left" Margin="10,329,0,0" VerticalAlignment="Top" Height="36" Width="251" Foreground="Green" FontSize="10"/>
+        <Label Content="Si majeur ce sera age rentre+10:tranche age de 10 ans" HorizontalAlignment="Left" Margin="10,341,0,0" VerticalAlignment="Top" Height="36" Width="251" Foreground="Green" FontSize="10" />
+        <Label Content="equipe homme ou equipe femme" HorizontalAlignment="Left" Margin="62,272,0,0" VerticalAlignment="Top" Height="43" Width="199" Foreground="Green"/>
+        <Label Content="double homme ou double femme" HorizontalAlignment="Left" Margin="62,256,0,0" VerticalAlignment="Top" Height="30" Width="199" Foreground="Green"/>
+        <Label Content="regionnal,departemental,national.." HorizontalAlignment="Left" Margin="27,382,0,0" VerticalAlignment="Top" Width="216" Foreground="Green"/>
+        <Label Content="Type = int" HorizontalAlignment="Left" Margin="27,440,0,0" VerticalAlignment="Top" Width="216" Foreground="Green"/>
+        <Label Content="Type = double si classement =15/4 mettre 15,4" HorizontalAlignment="Left" Margin="10,500,0,0" VerticalAlignment="Top" Width="233" Foreground="Green" FontSize="10"/>
+
+    </Grid>
+</Window>

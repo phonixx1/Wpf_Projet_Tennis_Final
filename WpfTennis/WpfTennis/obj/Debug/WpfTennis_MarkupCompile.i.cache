@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Sacha\Documents\Informatique\GitHub\Wpf_Projet_Tennis_Final\WpfTennis\WpfTennis\App.xaml
-10-2117367073
+12602919550
 
-151760276864
+171804581905
 1732218797
-Chargement.xaml;FenAide.xaml;FenAjoutAdministration.xaml;FenAjoutEntraineur.xaml;FenAjoutMembre.xaml;MainWindow.xaml;ModuleAdministration.xaml;ModuleEntraineurs.xaml;ModuleMembres.xaml;ModuleStatistiques.xaml;
+Chargement.xaml;FenAide.xaml;FenAjoutAdministration.xaml;FenAjoutCompetition.xaml;FenAjoutEntraineur.xaml;FenAjoutMembre.xaml;MainWindow.xaml;ModuleAdministration.xaml;ModuleCreationCompetition.xaml;ModuleEntraineurs.xaml;ModuleMembres.xaml;ModuleStatistiques.xaml;
 
 True
 
