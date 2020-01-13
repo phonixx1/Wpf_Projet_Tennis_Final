@@ -59,15 +59,17 @@ namespace ConsoleApp1
                 }
             }
         }
+        public Membre Capitaine
+        {
+            get { return capitaine; }
+            set { this.capitaine = value; }
+        }
         
         public Competition Competition_engagee
         {
             get { return competition_engagee; }
         }
-        public Membre Capitaine
-        {
-            get { return capitaine; }
-        }
+       
         public List<Membre> Composition_Equipe
         {
             get { return composition_Equipe; }

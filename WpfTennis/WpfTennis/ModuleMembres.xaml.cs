@@ -96,6 +96,31 @@ namespace WpfTennis
             {
                 e.Column.IsReadOnly = true;
             }
+            if (e.PropertyName == "Nb_Victoires")
+            {
+                e.Column = null;
+            }
+            if (e.PropertyName == "Nb_Defaites")
+            {
+                e.Column = null;
+            }
+            if (e.PropertyName == "NbVicSimple")
+            {
+                e.Column = null;
+            }
+            if (e.PropertyName == "NbVicDouble")
+            {
+                e.Column = null;
+            }
+            if (e.PropertyName == "NbVicSimple")
+            {
+                e.Column = null;
+            }
+            if (e.PropertyName == "NbVicDouble")
+            {
+                e.Column = null;
+            }
+
 
         }
 

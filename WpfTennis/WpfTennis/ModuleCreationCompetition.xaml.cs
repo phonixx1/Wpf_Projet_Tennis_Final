@@ -21,7 +21,7 @@ namespace WpfTennis
     /// </summary>
     public partial class ModuleCreationCompetition : Window
     {
-        Competition competCree;
+        Competition competCree=null;
         List<Membre> listeDesMembres;
         
         
@@ -62,6 +62,11 @@ namespace WpfTennis
                     this.nbEquipe.Content ="Nombre d'equipe : " +Convert.ToString(competCree.Equipe_participante.Count);
                 }
             }
+            else 
+            {
+               
+                this.listeDesMembres = nouvelleEquipeComet.ListeMembre;
+            }
 
         }
 
@@ -69,13 +74,64 @@ namespace WpfTennis
 
         private void btnStrat_Click(object sender, RoutedEventArgs e)
         {
-            if(competCree.Equipe_participante.Count%2==0)
-            {
+            
+            FenDefinirGagnant defGagnant;
+            int compteur = 0;
+            Equipe_Competition gagnant;
+            int numeroGagnant=1;
+            
 
+            if (competCree != null)
+            {
+                
+                if ((competCree.Equipe_participante.Count % 2 == 0)&&(competCree.Equipe_participante.Count!=0))
+                {
+                    
+                    this.competCree.Creation_Liste_Match();
+                    foreach (Match element in competCree.Liste_match)
+                    {
+                        defGagnant = new FenDefinirGagnant(element);
+                        defGagnant.Owner = this;
+                        defGagnant.ShowDialog();
+                        if(defGagnant.DialogResult==true)
+                        {
+                            compteur++;
+                        }
+                        
+                    }
+                    if (competCree.Liste_match.Count==compteur)
+                    {
+                        gagnant = competCree.Equipe_participante[0];
+                        for (int i=1;i<competCree.Equipe_participante.Count;i++)
+                        {
+                            if(gagnant.Points_Equipe< competCree.Equipe_participante[i].Points_Equipe)
+                            {
+                                gagnant = competCree.Equipe_participante[i];
+                                numeroGagnant = i+1;
+                            }
+                            
+                        }
+                        MessageBox.Show("Lequipe numero " + Convert.ToString(numeroGagnant) + " a gagné et son capitaine est " + Convert.ToString(gagnant.Capitaine.Nom));
+                        competCree.Compet_finie = true;
+                        MessageBox.Show("La competition est finie");
+                        this.DialogResult = true;
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Probleme dans la competition");
+                    }
+
+
+                }
+                else
+                {
+                    MessageBox.Show(" Nombre dequipes pair et different de 0");
+                }
             }
             else
             {
-                MessageBox.Show("Nombre dequipe pair on peut pas start la compet");
+                MessageBox.Show("cree une compet");
             }
         }
     }

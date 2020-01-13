@@ -49,6 +49,7 @@ namespace WpfTennis
                     nb_participation_en_cours++;
                 }
             }
+            grilleDonnees.IsReadOnly = true;
             this.participationCompet.Content = "Le Club a " + Convert.ToString(nb_participation_finie) + " competition(s) finie(s) et " + Convert.ToString(nb_participation_en_cours) + " competition(s) en cours";
             this.liste_membre = club.Liste_Membre;
             ocMembre = new ObservableCollection<Membre>(this.liste_membre);
@@ -94,7 +95,15 @@ namespace WpfTennis
             {
                 e.Column = null;
             }
-            
+            if (e.PropertyName == "NbVicSimple")
+            {
+                e.Column = null;
+            }
+            if (e.PropertyName == "NbVicDouble")
+            {
+                e.Column = null;
+            }
+
 
         }
     }

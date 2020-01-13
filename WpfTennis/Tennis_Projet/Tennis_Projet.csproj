@@ -51,6 +51,8 @@
     <Compile Include="Evenement.cs" />
     <Compile Include="IToString.cs" />
     <Compile Include="Match.cs" />
+    <Compile Include="Match_Double.cs" />
+    <Compile Include="Match_Simple.cs" />
     <Compile Include="Membre.cs" />
     <Compile Include="Personne.cs" />
     <Compile Include="Personne_Administration.cs" />

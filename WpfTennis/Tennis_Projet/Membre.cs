@@ -22,7 +22,8 @@ namespace ConsoleApp1
 
         Club nom_du_club_affilie;// club où le joueur est affilié
 
-        int nb_victoires=0;
+        int nb_victoires_simple = 0;
+        int nb_victoires_double = 0;
 
 
         #region Constructeurs
@@ -117,8 +118,38 @@ namespace ConsoleApp1
         }
         public int Nb_Victoires
         {
-            get { return nb_victoires; }
+            get { return this.nb_victoires_double+this.nb_victoires_simple; }
            
+        }
+        public int Nb_Defaites
+        {
+            get { return Calcul_nb_defaite(); }
+        }
+        public int NbPointGagne
+        {
+            get { return Calcul_points(); }
+        }
+        public int NbVicSimple
+        {
+            get
+            {
+                return this.nb_victoires_simple;
+            }
+            set
+            {
+                this.nb_victoires_simple=value;
+            }
+        }
+        public int NbVicDouble
+        {
+            get
+            {
+                return this.nb_victoires_double;
+            }
+            set
+            {
+                this.nb_victoires_double = value;
+            }
         }
         public List<Equipe_Competition> Equipes
         {
@@ -139,9 +170,32 @@ namespace ConsoleApp1
 
             }
         }
-        public void Ajouter_Victore()
+        
+        int Calcul_nb_defaite()
         {
-            nb_victoires = nb_victoires + 1;
+            int nb_match_joue = 0;
+            for (int i = 0; i < equipes.Count; i++)
+            {
+                if (equipes[i].Competition_engagee.Compet_finie == true)
+                {
+                    nb_match_joue++;
+                }
+            }
+            int nb_defaite = nb_match_joue - nb_victoires_simple - nb_victoires_double;
+            return nb_defaite;
+        }
+        int Calcul_points()
+        {
+            int points = nb_victoires_double + nb_victoires_simple * 2;
+            return points;
+        }
+        public void Ajouter_Victore_Simple()
+        {
+            nb_victoires_simple = nb_victoires_simple + 1;
+        }
+        public void Ajouter_Victore_Double()
+        {
+            nb_victoires_double = nb_victoires_double + 1;
         }
         #region Paiement et cotisation
         bool Essai_Paiement_Cotisation() // return true si la cotis est payé

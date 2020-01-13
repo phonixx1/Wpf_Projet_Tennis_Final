@@ -169,7 +169,7 @@ namespace WpfTennis
             {
                if(this.club.Liste_compet.Count==0)
                 {
-                    MessageBox.Show("Aucune competition crée");
+                    MessageBox.Show("Aucune competition en cours");
                 }
                 else
                 {
@@ -178,12 +178,22 @@ namespace WpfTennis
                     retrouverCompet.ShowDialog();
                     if(retrouverCompet.DialogResult==true)
                     {
-                        ModuleCreationCompetition creationResteDeLaCompet = new ModuleCreationCompetition(this.club.Liste_compet[retrouverCompet.NbReturn-1], this.club.Liste_Membre);
-                        this.Hide();
-                        creationResteDeLaCompet.Owner = this;
-                        creationResteDeLaCompet.ShowDialog();
+                        if (this.club.Liste_compet[retrouverCompet.NbReturn - 1].Compet_finie == false)
+                        {
+                            ModuleCreationCompetition creationResteDeLaCompet = new ModuleCreationCompetition(this.club.Liste_compet[retrouverCompet.NbReturn - 1], this.club.Liste_Membre);
+                            this.Hide();
+                            creationResteDeLaCompet.Owner = this;
+                            creationResteDeLaCompet.ShowDialog();
+                            this.ShowDialog();
+                        }
+                        else
+                        {
+                            MessageBox.Show("La competition selectionnée a ete fini");
+                        }
+                        
+
                     }
-                    this.ShowDialog();
+                    
 
                 }
             }
@@ -210,7 +220,7 @@ namespace WpfTennis
             Excel.Application appExcel = null;
             Excel._Workbook workBook = null;
             Excel._Worksheet workSheet = null;
-
+            int ancienNb;
             int nbAdministration;
             bool save = false;
             string nom_club;
@@ -227,8 +237,8 @@ namespace WpfTennis
                     //Get a new workbook.
                     workBook = (Excel._Workbook)(appExcel.Workbooks.Open(Environment.CurrentDirectory.ToString() + "/" + nom_club + "/FichierAdministration" + nom_club + ".xlsx"));
                     workSheet = (Excel._Worksheet)workBook.ActiveSheet;
-                    
 
+                    ancienNb = Convert.ToInt32(workSheet.Cells[1, 1].Value);
                     nbAdministration = this.club.Groupe_Administratif.Count;
                     workSheet.Cells[1, 1].Value = nbAdministration;
                     
@@ -250,7 +260,24 @@ namespace WpfTennis
                         
 
                     }
-                    
+                    if (nbAdministration < ancienNb)
+                    {
+                        for (int i = nbAdministration; i < ancienNb;i++)
+                        {
+                            workSheet.Cells[i + 2, 1].Value =null;
+                            workSheet.Cells[i + 2, 2].Value = null;
+                            workSheet.Cells[i + 2, 3].Value = null;
+                            workSheet.Cells[i + 2, 4].Value = null;
+                            workSheet.Cells[i + 2, 5].Value = null;
+
+                            workSheet.Cells[i + 2, 6].Value = null;
+                            workSheet.Cells[i + 2, 7].Value = null;
+                            workSheet.Cells[i + 2, 8].Value = null;
+                            workSheet.Cells[i + 2, 9].Value = null;
+
+                            workSheet.Cells[i + 2, 10].Value = null;
+                        }
+                    }
                     save = true;
 
                 }
@@ -280,6 +307,7 @@ namespace WpfTennis
             Excel._Worksheet workSheet = null;
 
             int nbEntraineurs;
+            int ancienNb;
             bool save = false;
             string nom_club;
             if (this.club != null)
@@ -295,6 +323,7 @@ namespace WpfTennis
                     workBook = (Excel._Workbook)(appExcel.Workbooks.Open(Environment.CurrentDirectory.ToString() + "/" + nom_club + "/FichierEntraineur" + nom_club + ".xlsx"));
                     workSheet = (Excel._Worksheet)workBook.ActiveSheet;
 
+                    ancienNb = Convert.ToInt32(workSheet.Cells[1, 1].Value);
 
                     nbEntraineurs = this.club.Liste_Entraineur.Count;
                     workSheet.Cells[1, 1].Value = nbEntraineurs;
@@ -344,6 +373,29 @@ namespace WpfTennis
                         }
 
                     }
+                    if (nbEntraineurs < ancienNb)
+                    {
+                        for (int i = nbEntraineurs; i < ancienNb; i++)
+                        {
+                            workSheet.Cells[i + 2, 1].Value = null;
+                            workSheet.Cells[i + 2, 2].Value = null;
+                            workSheet.Cells[i + 2, 3].Value = null;
+                            workSheet.Cells[i + 2, 4].Value = null;
+                            workSheet.Cells[i + 2, 5].Value = null;
+
+                            workSheet.Cells[i + 2, 6].Value = null;
+                            workSheet.Cells[i + 2, 7].Value = null;
+                            workSheet.Cells[i + 2, 8].Value = null;
+                            workSheet.Cells[i + 2, 9].Value = null;
+
+                            workSheet.Cells[i + 2, 10].Value = null;
+                            workSheet.Cells[i + 2, 11].Value = null;
+                            workSheet.Cells[i + 2, 12].Value =null;
+                            workSheet.Cells[i + 2, 13].Value = null;
+                            workSheet.Cells[i + 2, 14].Value = null;
+                            workSheet.Cells[i + 2, 15].Value = null;
+                        }
+                    }
                     save = true;
 
                 }
@@ -374,6 +426,8 @@ namespace WpfTennis
             Excel._Worksheet workSheet=null;
 
             int nbMembres;
+            int ancienNb;
+
             bool save = false;
             string nom_club;
             if (this.club!=null) 
@@ -389,6 +443,7 @@ namespace WpfTennis
                     workBook = (Excel._Workbook)(appExcel.Workbooks.Open(Environment.CurrentDirectory.ToString() + "/" + nom_club + "/FichierMembres" + nom_club + ".xlsx"));
                     workSheet = (Excel._Worksheet)workBook.ActiveSheet;
 
+                    ancienNb = Convert.ToInt32(workSheet.Cells[1, 1].Value);
 
                     nbMembres = this.club.Liste_Membre.Count;
                     workSheet.Cells[1, 1].Value = nbMembres;
@@ -423,6 +478,25 @@ namespace WpfTennis
                             workSheet.Cells[i + 2, 11].Value = "F";
                         }
 
+                    }
+                    if (nbMembres < ancienNb)
+                    {
+                        for (int i = nbMembres; i < ancienNb; i++)
+                        {
+                            workSheet.Cells[i + 2, 1].Value = null;
+                            workSheet.Cells[i + 2, 2].Value = null;
+                            workSheet.Cells[i + 2, 3].Value = null;
+                            workSheet.Cells[i + 2, 4].Value = null;
+                            workSheet.Cells[i + 2, 5].Value = null;
+
+                            workSheet.Cells[i + 2, 6].Value = null;
+                            workSheet.Cells[i + 2, 7].Value = null;
+                            workSheet.Cells[i + 2, 8].Value = null;
+                            workSheet.Cells[i + 2, 9].Value = null;
+
+                            workSheet.Cells[i + 2, 10].Value = null;
+                            workSheet.Cells[i + 2, 11].Value = null;
+                        }
                     }
                     save = true;
 

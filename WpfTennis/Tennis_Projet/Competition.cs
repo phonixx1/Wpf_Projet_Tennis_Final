@@ -28,7 +28,8 @@ namespace ConsoleApp1
 
         List<Equipe_Competition> equipes_participantes;
         List<Match> liste_match;
-        List<Membre> joueur_a_deja_joue=null;  //stock les joueurs qui ont deja joué (car un joueur ne peut jouer qu'une fois par compet)
+        List<Membre> listeMembreGagnant = new List<Membre>();
+        //List<Membre> joueur_a_deja_joue=null;  //stock les joueurs qui ont deja joué (car un joueur ne peut jouer qu'une fois par compet)
         public Competition(string nom, int prix, DateTime debut, TimeSpan duree,Club organisateur,string type_competition,int tranche_age,string niveau,int nb_joueur,double classement_max) 
             : base(nom, prix, debut, duree)
         {
@@ -56,10 +57,15 @@ namespace ConsoleApp1
             this.equipes_participantes = equipes;
             
         }
-
+        public List<Membre> ListeMembreGagnant
+        {
+            get { return this.listeMembreGagnant; }
+            set { this.listeMembreGagnant = value; }
+        }
         public bool Compet_finie
         {
             get { return compet_finie; }
+            set { this.compet_finie = value; }
         }
         public int Tranche_age
         {
@@ -70,6 +76,10 @@ namespace ConsoleApp1
             get { return this.equipes_participantes; }
             set { this.equipes_participantes = value; }
         }
+        public List<Match> Liste_match
+        {
+            get { return this.liste_match; }
+        }
         public int Nb_Joueur
         {
             get { return nb_joueur; }
@@ -77,6 +87,7 @@ namespace ConsoleApp1
         public string TypeCompetition
         {
             get { return this.type_competition; }
+            
         }
        public bool Ajouter_Equipe(Equipe_Competition equipe_Aajouter) // return true si l'equipe a ete ajouter false sinn
         {
@@ -88,233 +99,245 @@ namespace ConsoleApp1
 
             return ajout_reussi;
         }
-        /*
-        public void Ajouter_Match_Simple(Equipe_Competition equipe1, Equipe_Competition equipe2, int indice_joueur_equipe1, int  indice_joueur_equipe2)
+        public void Ajouter_Match_Simple(Equipe_Competition equipe1, Equipe_Competition equipe2, int indice_joueur_equipe1, int indice_joueur_equipe2)
         {
-            //bool type_match_adapte = Type_Match_adapte(1);
-            //bool joueur1_dispo = Joueur_dispo(equipe1,indice_joueur_equipe1);
-            //bool joueur2_dispo = Joueur_dispo(equipe2, indice_joueur_equipe2);
-            //if (joueur1_dispo == true && joueur2_dispo == true && type_match_adapte == true)
-            //{
-                liste_match.Add(new Match_Simple(equipe1, equipe2, indice_joueur_equipe1, indice_joueur_equipe2));
-            //}
+            liste_match.Add(new Match_Simple(equipe1, equipe2, indice_joueur_equipe1, indice_joueur_equipe2, "match simple"));
         }
         public void Ajouter_Match_Double(Equipe_Competition equipe1, Equipe_Competition equipe2, int indice_joueur1_equipe1, int indice_joueur1_equipe2, int indice_joueur2_equipe1, int indice_joueur2_equipe2)
         {
-            liste_match.Add(new Match_Double(equipe1, equipe2, indice_joueur1_equipe1, indice_joueur1_equipe2,indice_joueur2_equipe1,indice_joueur2_equipe2));  
+            liste_match.Add(new Match_Double(equipe1, equipe2, indice_joueur1_equipe1, indice_joueur1_equipe2, indice_joueur2_equipe1, indice_joueur2_equipe2, "match double"));
         }
-        public bool Type_Match_adapte(int type_match) //1 pour match simple, 2 pour match double
+        public void Lancement_Compet(List<Equipe_Competition> equipe_gagnante, List<Membre> membre_gagnant)
         {
-            bool type_match_adapte = true;
-            if (type_competition != "equipe homme" || type_competition != "equipe femme")
+            Match_Simple test_match_simple = new Match_Simple();
+            Match_Double test_match_double = new Match_Double();
+            List<Match_Simple> liste_match_simple = new List<Match_Simple>();
+            List<Match_Double> liste_match_double = new List<Match_Double>();
+            int indice_liste_match_simple = 0;
+            int indice_liste_match_double = 0;
+            int indice_membre_gagnant = 0;
+            for (int i = 0; i < liste_match.Count; i++)
             {
-                if (type_match == 1)
+                if (liste_match[i].Type_match == "match simple")
                 {
-                    if (type_competition == "double homme" || type_competition == "double femme")
-                    {
-                        type_match_adapte = false;
-                    }
+                    liste_match_simple.Add((Match_Simple)liste_match[i]);
+                    liste_match_simple[indice_liste_match_simple].Ajout_point1(membre_gagnant[indice_membre_gagnant], equipe_gagnante[i]);
+                    indice_liste_match_simple++;
+                    indice_membre_gagnant++;
                 }
-                if (type_match == 2)
+                if (liste_match[i].Type_match == "match double")
                 {
-                    if (type_competition == "simple homme" || type_competition == "simple femme")
-                    {
-                        type_match_adapte = false;
-                    }
-                }
-            }
-            return type_match_adapte;
-        }
-        public int Generer_aleatoire(int a, int b)
-        {
-            Random aleatoire = new Random();
-            int nb_aleatoire = aleatoire.Next(a,b);
-            return nb_aleatoire;
-        }
-        public int[] Creation_tab_indice_joueurs_aleatoire(Random aleatoire)
-        {
-            int[] tab_aleatoire = new int[nb_joueur];
-            int[] tab_indice_indispo = new int[nb_joueur];
-            for (int k = 0; k < tab_indice_indispo.Length; k++)
-            {
-                tab_indice_indispo[k] = -1;
-            }
-            int indice_aleatoire = 10;
-            for (int i = 0; i < nb_joueur; i++)
-            {
-                int dispo = 1;
-                while (dispo != 0)
-                {
-                    indice_aleatoire = aleatoire.Next(0, nb_joueur );
-                    for (int j = 0; j < nb_joueur; j++)
-                    {
-                        if (tab_indice_indispo[j] == indice_aleatoire)
-                        {
-                            dispo += 1;
-                        }
-                    }
-                    dispo = dispo - 1;
-                }
-                tab_indice_indispo[i] = indice_aleatoire;
-                tab_aleatoire[i] = indice_aleatoire;
-            }
-            for (int m = 0; m < tab_aleatoire.Length; m++)
-            {
-                Console.Write("=" + tab_aleatoire[m]);
-            }
-            Console.WriteLine("---");
-            return tab_aleatoire;
-        }
-        //public Equipe_Competition Lancement_Compet()
-        //{
-            //for (int i = 0; i < liste_match.Count; i++)
-            //{
-                //Ajout_Point
-           // }
-       // }
-        public bool Joueur_dispo(Equipe_Competition equipe, int indice_joueur_equipe)
-        {
-            bool joueur_dispo = true;
-            for (int i = 0; i < joueur_a_deja_joue.Count; i++)
-            {
-                if (equipe.Composition_Equipe[indice_joueur_equipe] == joueur_a_deja_joue[i])
-                {
-                    joueur_dispo = false; 
+                    liste_match_double.Add((Match_Double)liste_match[i]);
+                    liste_match_double[indice_liste_match_double].Ajout_point2(membre_gagnant[indice_membre_gagnant], membre_gagnant[indice_membre_gagnant + 1], equipe_gagnante[i]);
+                    indice_liste_match_double++;
+                    indice_membre_gagnant = indice_membre_gagnant + 2; ;
                 }
             }
-            return joueur_dispo;
+            compet_finie = true;
         }
-        public void Creation_Liste_Match2()
-        {
-            List < int > liste_nombre_restants = new List<int>();
-            for (int i = 0; i<equipes_participantes.Count * nb_joueur ;i++)
-            {
-                liste_nombre_restants.Add(i);
-                Console.WriteLine(liste_nombre_restants[i]);
-            }
 
+        public bool Nb_dispo1(int nb_aleatoire, List<int> liste_nombre_restants)
+        {
+            bool dispo = false;
+            for (int i = 0; i < liste_nombre_restants.Count; i++)
+            {
+                if (nb_aleatoire == liste_nombre_restants[i])
+                {
+                    dispo = true;
+                    liste_nombre_restants[i] = -1;
+                }
+            }
+            return dispo;
+        }
+        public bool Nb_dispo2(int nb_aleatoire, List<int> liste_nombre_restants, int indice_equipe1, int indice_equipe2)
+        {
+            bool dispo = false;
+            for (int i = 0; i < liste_nombre_restants.Count; i++)
+            {
+                if (nb_aleatoire == liste_nombre_restants[i] && indice_equipe1 != indice_equipe2)
+                {
+                    dispo = true;
+                    liste_nombre_restants[i] = -1;
+                }
+            }
+            return dispo;
+        }
+        public int Nb_dispo_double(int nb_aleatoire1, List<int> liste_nombre_restants)
+        {
+            int indice = -1;
+            for (int i = 0; i < liste_nombre_restants.Count; i++)
+            {
+                if (nb_aleatoire1 == liste_nombre_restants[i])
+                {
+                    indice = i;
+                }
+            }
+            return indice;
         }
         public void Creation_Liste_Match()
         {
-           // Console.WriteLine("a");
-            int[,] matrice_indices_joueur = new int [equipes_participantes.Count, nb_joueur];
-            Random aleatoire = new Random();
-            for (int i = 0; i < equipes_participantes.Count; i++)
+            int nb_aleatoire1;
+            int nb_aleatoire2;
+            int indice_equipe1;
+            int indice_joueur1;
+            int indice_equipe2;
+            int indice_joueur2;
+            int nb_aleatoire3;
+            int nb_aleatoire4;
+            List<int> liste_nombre_possible = new List<int>();
+            for (int i = 0; i < equipes_participantes.Count * nb_joueur; i++)
             {
-               // Console.WriteLine("b");
-                int[] tab_indice_aleatoire = Creation_tab_indice_joueurs_aleatoire(aleatoire);
-                for (int j = 0; j<nb_joueur; j++)
-                {
-                   // Console.WriteLine("c");
-                    matrice_indices_joueur[i, j] = tab_indice_aleatoire[j];
-                }
+                liste_nombre_possible.Add(i);
             }
+            Random aleatoire = new Random();
             if (type_competition == "simple homme" || type_competition == "simple femme")
             {
-               //Console.WriteLine("d");
-               for (int i = 0; i<matrice_indices_joueur.GetLength(0); i++)
+                for (int j = 0; j < equipes_participantes.Count * nb_joueur / 2; j++)
                 {
-                    Console.WriteLine();
-                    for (int j = 0; j < matrice_indices_joueur.GetLength(1); j++)
+                    do
                     {
-                        Console.Write("-" + matrice_indices_joueur[i, j]);
-                    }
-                }
-                Console.WriteLine();
-                for (int i = 0; i < matrice_indices_joueur.GetLength(0) ; i++)
-                {
-                    for (int j = i; j < matrice_indices_joueur.GetLength(1) ; j++)
+                        nb_aleatoire1 = aleatoire.Next(0, liste_nombre_possible.Count);
+                        indice_equipe1 = nb_aleatoire1 / nb_joueur;
+                        indice_joueur1 = nb_aleatoire1 % nb_joueur;
+                    } while (Nb_dispo1(nb_aleatoire1, liste_nombre_possible) == false);
+                    do
                     {
-                       // Console.WriteLine(equipes_participantes[i].Capitaine.Nom);
-                       // Console.WriteLine(equipes_participantes[j].Capitaine.Nom);
-                        Console.WriteLine(matrice_indices_joueur[i, j] + " = " + matrice_indices_joueur[j, i]);
-                        Ajouter_Match_Simple(equipes_participantes[i], equipes_participantes[j], matrice_indices_joueur[i, j], matrice_indices_joueur[j, i]);
-                        Console.WriteLine("Match x");
-                       // Console.WriteLine(":" + i);
-                    }
+                        nb_aleatoire2 = aleatoire.Next(0, liste_nombre_possible.Count);
+                        indice_equipe2 = nb_aleatoire2 / nb_joueur;
+                        indice_joueur2 = nb_aleatoire2 % nb_joueur;
+                    } while (Nb_dispo2(nb_aleatoire2, liste_nombre_possible, indice_equipe1, indice_equipe2) == false);
+                    Ajouter_Match_Simple(equipes_participantes[indice_equipe1], equipes_participantes[indice_equipe2], indice_joueur1, indice_joueur2);
                 }
             }
-            if (type_competition == "double homme" || type_competition == "double femme")  //A tester
+            if (type_competition == "double homme" || type_competition == "double femme")
             {
-                Console.WriteLine("d");
-                for (int i = 0; i < equipes_participantes.Count; i++)
+                for (int j = 0; j < equipes_participantes.Count * nb_joueur / 2; j++)
                 {
-                    for (int j = i + 1; j < nb_joueur; j++)
+                    do
                     {
-                        //Console.WriteLine(equipes_participantes[i].Capitaine.Nom);
-                        //Console.WriteLine(equipes_participantes[j].Capitaine.Nom);
-                        Console.WriteLine(matrice_indices_joueur[i, j] + " = " + matrice_indices_joueur[j, i]);
-                        Console.WriteLine(matrice_indices_joueur[i, j+1] + " = " + matrice_indices_joueur[j, i+1]);
-                        Console.WriteLine("-----");
-                        Ajouter_Match_Double(equipes_participantes[i], equipes_participantes[j], matrice_indices_joueur[i, j], matrice_indices_joueur[j, i],matrice_indices_joueur[i,j+1],matrice_indices_joueur[j,i+1]);
-                        //Console.WriteLine(":" + i);
-                    }
+                        nb_aleatoire1 = aleatoire.Next(0, liste_nombre_possible.Count);
+                        indice_equipe1 = nb_aleatoire1 / nb_joueur;
+                        indice_joueur1 = nb_aleatoire1 % nb_joueur;
+                        nb_aleatoire3 = indice_equipe1 * nb_joueur;
+                        if (nb_aleatoire3 == nb_aleatoire1)
+                        {
+                            nb_aleatoire3 = nb_aleatoire1 + 1;
+                        }
+                        while (Nb_dispo_double(nb_aleatoire3, liste_nombre_possible) == -1)
+                        {
+                            nb_aleatoire3++;
+                            if (nb_aleatoire3 == nb_aleatoire1)
+                            {
+                                nb_aleatoire3 = nb_aleatoire1 + 1;
+                            }
+                        }
+                    } while (Nb_dispo_double(nb_aleatoire1, liste_nombre_possible) == -1);
+                    liste_nombre_possible[Nb_dispo_double(nb_aleatoire3, liste_nombre_possible)] = -1;
+                    liste_nombre_possible[Nb_dispo_double(nb_aleatoire1, liste_nombre_possible)] = -1;
+                    do
+                    {
+                        nb_aleatoire2 = aleatoire.Next(0, liste_nombre_possible.Count);
+                        indice_equipe2 = nb_aleatoire2 / nb_joueur;
+                        indice_joueur2 = nb_aleatoire2 % nb_joueur;
+                        nb_aleatoire4 = indice_equipe2 * nb_joueur;
+                        if (nb_aleatoire4 == nb_aleatoire2)
+                        {
+                            nb_aleatoire4 = nb_aleatoire2 + 1;
+                        }
+                        while (Nb_dispo_double(nb_aleatoire4, liste_nombre_possible) == -1)
+                        {
+                            nb_aleatoire4++;
+                            if (nb_aleatoire4 == nb_aleatoire2)
+                            {
+                                nb_aleatoire4 = nb_aleatoire2 + 1;
+                            }
+                        }
+                    } while (Nb_dispo_double(nb_aleatoire2, liste_nombre_possible) == -1 && indice_equipe1 != indice_equipe2);
+                    liste_nombre_possible[Nb_dispo_double(nb_aleatoire4, liste_nombre_possible)] = -1;
+                    liste_nombre_possible[Nb_dispo_double(nb_aleatoire2, liste_nombre_possible)] = -1;
+                    Ajouter_Match_Double(equipes_participantes[indice_equipe1], equipes_participantes[indice_equipe2], indice_joueur1, indice_joueur2, nb_aleatoire3 % nb_joueur, nb_aleatoire4 % nb_joueur);
                 }
             }
             if (type_competition == "equipe homme" || type_competition == "equipe femme")
             {
-                //for (int i = 0; i<)
-            }
-        }
-        public int[] Calcul_nb_match(int nb_joueur)
-        {
-            int[] nb_match = new int[2];
-            while(nb_match[0] + nb_match[1] < nb_joueur - 1)
-            {
-                int choix = Generer_aleatoire(1, 3);
-                if (choix == 1)
+                Random match_double = new Random();
+                int nb_match_double = match_double.Next(1, Equipe_participante.Count * nb_joueur / 4);
+                int nb_match_simple = ((Equipe_participante.Count * nb_joueur) - nb_match_double) / 2;
+                for (int j = 0; j < nb_match_double; j++)
                 {
-                    nb_match[0] = nb_match[0] + 1;
+                    do
+                    {
+                        nb_aleatoire1 = aleatoire.Next(0, liste_nombre_possible.Count);
+                        indice_equipe1 = nb_aleatoire1 / nb_joueur;
+                        indice_joueur1 = nb_aleatoire1 % nb_joueur;
+                        nb_aleatoire3 = indice_equipe1 * nb_joueur;
+                        if (nb_aleatoire3 == nb_aleatoire1)
+                        {
+                            nb_aleatoire3 = nb_aleatoire1 + 1;
+                        }
+                        while (Nb_dispo_double(nb_aleatoire3, liste_nombre_possible) == -1)
+                        {
+                            nb_aleatoire3++;
+                            if (nb_aleatoire3 == nb_aleatoire1)
+                            {
+                                nb_aleatoire3 = nb_aleatoire1 + 1;
+                            }
+                        }
+                    } while (Nb_dispo_double(nb_aleatoire1, liste_nombre_possible) == -1);
+                    liste_nombre_possible[Nb_dispo_double(nb_aleatoire3, liste_nombre_possible)] = -1;
+                    liste_nombre_possible[Nb_dispo_double(nb_aleatoire1, liste_nombre_possible)] = -1;
+                    do
+                    {
+                        nb_aleatoire2 = aleatoire.Next(0, liste_nombre_possible.Count);
+                        indice_equipe2 = nb_aleatoire2 / nb_joueur;
+                        indice_joueur2 = nb_aleatoire2 % nb_joueur;
+                        nb_aleatoire4 = indice_equipe2 * nb_joueur;
+                        if (nb_aleatoire4 == nb_aleatoire2)
+                        {
+                            nb_aleatoire4 = nb_aleatoire2 + 1;
+                        }
+                        while (Nb_dispo_double(nb_aleatoire4, liste_nombre_possible) == -1)
+                        {
+                            nb_aleatoire4++;
+                            if (nb_aleatoire4 == nb_aleatoire2)
+                            {
+                                nb_aleatoire4 = nb_aleatoire2 + 1;
+                            }
+                        }
+                    } while (Nb_dispo_double(nb_aleatoire2, liste_nombre_possible) == -1 && indice_equipe1 != indice_equipe2);
+                    liste_nombre_possible[Nb_dispo_double(nb_aleatoire4, liste_nombre_possible)] = -1;
+                    liste_nombre_possible[Nb_dispo_double(nb_aleatoire2, liste_nombre_possible)] = -1;
+                    Ajouter_Match_Double(equipes_participantes[indice_equipe1], equipes_participantes[indice_equipe2], indice_joueur1, indice_joueur2, nb_aleatoire3 % nb_joueur, nb_aleatoire4 % nb_joueur);
                 }
-                if (choix == 2)
+                for (int j = 0; j < nb_match_simple; j++)
                 {
-                    nb_match[1] = nb_match[1] + 2;
+                    do
+                    {
+                        nb_aleatoire1 = aleatoire.Next(0, liste_nombre_possible.Count);
+                        indice_equipe1 = nb_aleatoire1 / nb_joueur;
+                        indice_joueur1 = nb_aleatoire1 % nb_joueur;
+                    } while (Nb_dispo1(nb_aleatoire1, liste_nombre_possible) == false);
+                    do
+                    {
+                        nb_aleatoire2 = aleatoire.Next(0, liste_nombre_possible.Count);
+                        indice_equipe2 = nb_aleatoire2 / nb_joueur;
+                        indice_joueur2 = nb_aleatoire2 % nb_joueur;
+                    } while (Nb_dispo2(nb_aleatoire2, liste_nombre_possible, indice_equipe1, indice_equipe2) == false);
+                    Ajouter_Match_Simple(equipes_participantes[indice_equipe1], equipes_participantes[indice_equipe2], indice_joueur1, indice_joueur2);
                 }
             }
-            while(nb_match[0] + nb_match[1] != nb_joueur)
-            {
-                nb_match[0] = nb_match[0] + 1;
-            }
-            return nb_match;
-        }
-        public int Nb_matchs_double(int nb_joueur,int nb_equipes_participantes)
-        {
-            Random aleatoire = new Random();
-            int nb_match_double = aleatoire.Next(1, nb_joueur * nb_equipes_participantes / 2);
-            return nb_match_double;
         }
         #region equals et operaator
-        
-        public override bool Equals(object obj)
-        {
-            Competition other = (Competition)obj;
-            return ((this.nom_de_evenement == other.nom_de_evenement) && (this.date_debut_evenement == other.date_debut_evenement) && (this.date_fin_evenement == other.date_fin_evenement) && (this.niveau_france == other.niveau_france) && (this.tranche_age == other.tranche_age));
-
-        }
-        public override int GetHashCode() // gethashcode cest l'identite de competition
-        {
-            string identite;
-            identite = this.nom_de_evenement + this.date_debut_evenement + this.date_fin_evenement + this.niveau_france + this.tranche_age;
-            return identite.GetHashCode();
-        }
-
-        public static bool operator ==(Competition compet1,Competition compet2)
-        {
-            return compet1.Equals(compet2);
-        }
-        public static bool operator !=(Competition compet1, Competition compet2)
-        {
-            return !(compet1.Equals(compet2));
-        }*/
         public bool Equals(Competition other) // 2compet egales si meme nom, dates, niveau et tranche age
         {
-            return ((this.nom_de_evenement == other.nom_de_evenement) && (this.date_debut_evenement == other.date_debut_evenement) && (this.date_fin_evenement == other.date_fin_evenement)&&(this.niveau_france==other.niveau_france)&&(this.tranche_age==other.tranche_age));
+            return ((this.nom_de_evenement == other.nom_de_evenement) && (this.date_debut_evenement == other.date_debut_evenement) && (this.date_fin_evenement == other.date_fin_evenement) && (this.niveau_france == other.niveau_france) && (this.tranche_age == other.tranche_age));
         }
-       //#endregion
+        
+        #endregion
 
 
 
-    
+
 
 
     }
