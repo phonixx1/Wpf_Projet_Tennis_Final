@@ -50,6 +50,7 @@ namespace WpfTennis
                 GenerePropertyChanged("ocEntraineur");
             }
         }
+
         private void btnRetourMainWindow_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = true;
@@ -68,11 +69,16 @@ namespace WpfTennis
                 ocEntraineur.Remove(aEffacer);
             }
         }
-
-
-
-
-
+        private void btnAjout_Click(object sender, RoutedEventArgs e)
+        {
+            FenAjoutEntraineur ajoutEntraineur = new FenAjoutEntraineur();
+            ajoutEntraineur.Owner = this;
+            ajoutEntraineur.ShowDialog();
+            if (ajoutEntraineur.DialogResult == true)
+            {
+                ocEntraineur.Add(ajoutEntraineur.AAjouter);
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
         private void GenerePropertyChanged(string Propriete)
@@ -90,15 +96,6 @@ namespace WpfTennis
                 e.Column.IsReadOnly = true;
             }
         }
-        private void btnAjout_Click(object sender, RoutedEventArgs e)
-        {
-            FenAjoutEntraineur ajoutEntraineur = new FenAjoutEntraineur();
-            ajoutEntraineur.Owner = this;
-            ajoutEntraineur.ShowDialog();
-            if (ajoutEntraineur.DialogResult == true)
-            {
-                ocEntraineur.Add(ajoutEntraineur.AAjouter);
-            }
-        }
+        
     }
 }
