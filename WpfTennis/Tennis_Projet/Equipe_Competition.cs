@@ -109,6 +109,15 @@ namespace ConsoleApp1
                                 Ajout_reussi = false;
                             }
                         }
+                        foreach (Stage element in A_Ajouter.Stage)
+                        {
+                            if ((element.Date_debut_evenement >= this.competition_engagee.Date_debut_evenement) && (element.Date_debut_evenement <= this.competition_engagee.Date_fin_evenement)
+                                || (element.Date_fin_evenement >= this.competition_engagee.Date_debut_evenement) && (element.Date_fin_evenement <= this.competition_engagee.Date_fin_evenement)
+                                || (element.Date_debut_evenement <= this.competition_engagee.Date_debut_evenement) && (element.Date_fin_evenement >= this.competition_engagee.Date_fin_evenement))
+                            {
+                                Ajout_reussi = false;
+                            }
+                        }
                     }
                 }
 
@@ -126,6 +135,15 @@ namespace ConsoleApp1
                             if ((element.competition_engagee.Date_debut_evenement >= this.competition_engagee.Date_debut_evenement) && (element.competition_engagee.Date_debut_evenement <= this.competition_engagee.Date_fin_evenement)
                                 || (element.competition_engagee.Date_fin_evenement >= this.competition_engagee.Date_debut_evenement) && (element.competition_engagee.Date_fin_evenement <= this.competition_engagee.Date_fin_evenement)
                                 || (element.competition_engagee.Date_debut_evenement <= this.competition_engagee.Date_debut_evenement) && (element.competition_engagee.Date_fin_evenement >= this.competition_engagee.Date_fin_evenement))
+                            {
+                                Ajout_reussi = false;
+                            }
+                        }
+                        foreach (Stage element in A_Ajouter.Stage)
+                        {
+                            if ((element.Date_debut_evenement >= this.competition_engagee.Date_debut_evenement) && (element.Date_debut_evenement <= this.competition_engagee.Date_fin_evenement)
+                                || (element.Date_fin_evenement >= this.competition_engagee.Date_debut_evenement) && (element.Date_fin_evenement <= this.competition_engagee.Date_fin_evenement)
+                                || (element.Date_debut_evenement <= this.competition_engagee.Date_debut_evenement) && (element.Date_fin_evenement >= this.competition_engagee.Date_fin_evenement))
                             {
                                 Ajout_reussi = false;
                             }

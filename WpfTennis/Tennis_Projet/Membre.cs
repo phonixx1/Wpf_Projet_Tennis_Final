@@ -15,7 +15,8 @@ namespace ConsoleApp1
         double competition = double.NaN; // NaN si pas de compet
 
         List<Equipe_Competition> equipes=new List<Equipe_Competition>(); // liste des equipes dans lesquelles le joueur est
-                                             
+
+        List<Stage> stage=new List<Stage>();
         int argent_total_compte_membre; // l'argent que le membre a mis sur son compte ( ca peut etre pour payer la cotis ou evenements)
 
         bool cotisastion_payee; // true si payee false sinn
@@ -157,6 +158,10 @@ namespace ConsoleApp1
         }
 
         #endregion
+        public List<Stage> Stage
+        {
+            get { return this.stage; }
+        }
         public override string ToString()
         {
             if (this.competition == double.NaN)
