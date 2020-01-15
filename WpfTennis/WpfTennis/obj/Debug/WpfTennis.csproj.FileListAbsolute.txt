@@ -78,3 +78,5 @@ D:\Sacha\Documents\Informatique\GitHub\Wpf_Projet_Tennis_Final\WpfTennis\WpfTenn
 D:\Sacha\Documents\Informatique\GitHub\Wpf_Projet_Tennis_Final\WpfTennis\WpfTennis\obj\Debug\ModuleEnCoursCompetition.baml
 D:\Sacha\Documents\Informatique\GitHub\Wpf_Projet_Tennis_Final\WpfTennis\WpfTennis\obj\Debug\FenDefinirGagnant.g.cs
 D:\Sacha\Documents\Informatique\GitHub\Wpf_Projet_Tennis_Final\WpfTennis\WpfTennis\obj\Debug\FenDefinirGagnant.baml
+D:\Sacha\Documents\Informatique\GitHub\Wpf_Projet_Tennis_Final\WpfTennis\WpfTennis\obj\Debug\FenAjoutStage.g.cs
+D:\Sacha\Documents\Informatique\GitHub\Wpf_Projet_Tennis_Final\WpfTennis\WpfTennis\obj\Debug\FenAjoutStage.baml

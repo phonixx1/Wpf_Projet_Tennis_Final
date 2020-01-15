@@ -83,6 +83,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="FenAjoutStage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="FenDefinirGagnant.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -115,6 +119,9 @@
     </Compile>
     <Compile Include="FenAjoutMembre.xaml.cs">
       <DependentUpon>FenAjoutMembre.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FenAjoutStage.xaml.cs">
+      <DependentUpon>FenAjoutStage.xaml</DependentUpon>
     </Compile>
     <Compile Include="FenDefinirGagnant.xaml.cs">
       <DependentUpon>FenDefinirGagnant.xaml</DependentUpon>

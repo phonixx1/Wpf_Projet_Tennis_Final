@@ -189,7 +189,7 @@ namespace ConsoleApp1
             int nb_defaite = nb_match_joue - nb_victoires_simple - nb_victoires_double;
             return nb_defaite;
         }
-        int Calcul_points()
+        public int Calcul_points()
         {
             int points = nb_victoires_double + nb_victoires_simple * 2;
             return points;
@@ -203,7 +203,7 @@ namespace ConsoleApp1
             nb_victoires_double = nb_victoires_double + 1;
         }
         #region Paiement et cotisation
-        bool Essai_Paiement_Cotisation() // return true si la cotis est payé
+        public bool Essai_Paiement_Cotisation() // return true si la cotis est payé
         // effectue le paiement de la cotisation SI POSSIBLE (i.e s'il ya largent neccessaire sur le compte_total_argent du membre)
         // s'il n'y a pas l'argent bas la cotis et pas payé et largent est laissé tel quel
         {
@@ -273,7 +273,7 @@ namespace ConsoleApp1
             return cotis;
         }
 
-        void ajouter_argent_sur_compte(int virement_a_effectuer)// int peut etre >0 ou <0
+        public void ajouter_argent_sur_compte(int virement_a_effectuer)// int peut etre >0 ou <0
         // cette fct sert a faire des ajouts sur le compte client
         {
             argent_total_compte_membre += virement_a_effectuer;

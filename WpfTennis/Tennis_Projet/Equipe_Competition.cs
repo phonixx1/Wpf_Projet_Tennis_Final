@@ -89,7 +89,8 @@ namespace ConsoleApp1
             this.composition_Equipe.Add(aAjouter);
             aAjouter.Equipes.Add(this);
         }
-        public bool Ajouter_un_membre(Membre A_Ajouter)
+        public bool Ajouter_un_membre(Membre A_Ajouter)// test plein de condition pour voir si on peut ajouter un membre a la competition
+
         {
             bool Ajout_reussi=false;
             if (A_Ajouter.Calcul_age() < 18)

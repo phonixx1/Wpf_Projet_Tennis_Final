@@ -163,6 +163,26 @@ namespace WpfTennis
                 MessageBox.Show("Charger un club avant toutes actions");
             }
         }
+        private void btnModuleCreationStage_Click(object sender, RoutedEventArgs e)
+        {
+            Stage stage = null;
+            if(this.club!=null)
+            {
+                FenAjoutStage ajoutStage = new FenAjoutStage(this.club);
+                ajoutStage.Owner = this;
+                ajoutStage.ShowDialog();
+                if (ajoutStage.IsActive == false && ajoutStage.DialogResult == true)
+                {
+                    stage = ajoutStage.ACreer;
+                    
+                }
+              
+             }
+            else
+            {
+                MessageBox.Show("Charger un club avant toutes actions");
+            }
+        }
         private void btnModuleCompetitionsEnCours_Click(object sender, RoutedEventArgs e)
         {
             if (this.club != null)
@@ -520,6 +540,7 @@ namespace WpfTennis
             return save;
 
         }
+
 
 
 

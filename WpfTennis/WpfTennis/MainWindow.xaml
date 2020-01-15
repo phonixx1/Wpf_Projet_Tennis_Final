@@ -8,19 +8,17 @@
         Title="MainWindow" Height="700" Width="1000">
     <Grid>
 
-
-
-
         <Label Name="nomclub" Content="Aucun club chargé" HorizontalAlignment="Left" Margin="400,10,0,0" VerticalAlignment="Top" Height="57" Width="206" FontSize="20" RenderTransformOrigin="1.731,1.662" FontWeight="Bold"/>
         <Button Name="btnDeChargement" Click="btnDeChargement_Click" HorizontalAlignment="Left" Margin="129,500,0,0" VerticalAlignment="Top" Width="180" Height="60" FontSize="11">Module de Chargement (database)</Button>
         <Button Name="btnModuleMembres" Click="btnModuleMembres_Click" HorizontalAlignment="Left" Margin="129,175,0,0" VerticalAlignment="Top" Width="180" Height="60">Module Membres</Button>
         <Button Name="btnModuleAdministration" Click="btnModuleAdministration_Click"  HorizontalAlignment="Left" Margin="400,175,0,0" VerticalAlignment="Top" Width="180" Height="60">Module Administration</Button>
         <Button Name="btnModuleEntraineur" Click="btnModuleEntraineur_Click"  HorizontalAlignment="Left" Margin="681,175,0,0" VerticalAlignment="Top" Width="180" Height="60">Module Entraineur</Button>
-        <Button Name="btnModuleCompetitions" Click="btnModuleCompetitions_Click" HorizontalAlignment="Left" Margin="400,279,0,0" VerticalAlignment="Top" Width="180" Height="60">Module Creation Competitions</Button>
-        <Button Name="btnModuleStatistiques" Click="btnModuleStatistiques_Click" HorizontalAlignment="Left" Margin="129,279,0,0" VerticalAlignment="Top" Width="180" Height="60">Module Statistiques</Button>
-        <Button Name="btnModuleCompetitionsEnCours" Click="btnModuleCompetitionsEnCours_Click" HorizontalAlignment="Left" Margin="681,279,0,0" VerticalAlignment="Top" Width="180" Height="60">Module Competitions crées</Button>
+        <Button Name="btnModuleCompetitions" Click="btnModuleCompetitions_Click" HorizontalAlignment="Left" Margin="252,279,0,0" VerticalAlignment="Top" Width="180" Height="60">Module Creation Competitions</Button>
+        <Button Name="btnModuleStatistiques" Click="btnModuleStatistiques_Click" HorizontalAlignment="Left" Margin="252,396,0,0" VerticalAlignment="Top" Width="180" Height="60">Module Statistiques</Button>
+        <Button Name="btnModuleCompetitionsEnCours" Click="btnModuleCompetitionsEnCours_Click" HorizontalAlignment="Left" Margin="539,279,0,0" VerticalAlignment="Top" Width="180" Height="60">Module Competitions crées</Button>
+        <Button Name="btnModuleCreationStage" Click="btnModuleCreationStage_Click"  HorizontalAlignment="Left" Margin="539,396,0,0" VerticalAlignment="Top" Width="180" Height="60">Module Creation stage</Button>
         <Button Name="btnSauvegarde" Click="btnSauvegarde_Click" HorizontalAlignment="Left" Margin="681,500,0,0" VerticalAlignment="Top" Width="180" Height="60">Sauvegarde du club (database)</Button>
-
+        
 
     </Grid>
 </Window>
