@@ -16,10 +16,11 @@ using ConsoleApp1;
 namespace WpfTennis
 {
     /// <summary>
-    /// Logique d'interaction pour FenDefinirGagnant.xaml
+    /// cest ici que lutilisateur definit qui est le gagnant dun match de competition
     /// </summary>
     public partial class FenDefinirGagnant : Window
     {
+
         Match match;
         Match_Simple matchSimple;
         Match_Double matchDouble;

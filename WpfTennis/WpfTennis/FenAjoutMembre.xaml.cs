@@ -16,7 +16,7 @@ using ConsoleApp1;
 namespace WpfTennis
 {
     /// <summary>
-    /// Logique d'interaction pour FenAjoutMembre.xaml
+    /// Retour des entrees de lutilisateur pour ajouter un membre
     /// </summary>
     public partial class FenAjoutMembre : Window
     {

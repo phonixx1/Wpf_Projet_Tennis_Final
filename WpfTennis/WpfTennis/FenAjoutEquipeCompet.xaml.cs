@@ -18,8 +18,11 @@ using System.ComponentModel;
 namespace WpfTennis
 {
     /// <summary>
-    /// POur lajout des joueur pour une equipe on s'est aide dune date grid qui simplifie enormement l'interaction pour lajout 
+    /// On constitue les equipes
+    /// Pour lajout des joueurs pour une equipe on s'est aide dune date grid qui simplifie enormement l'interaction pour lajout 
     /// on remarque aussi l'utilisation de observable collection qui sont bien plus pratique dans le maniment des datagrid
+    /// c'est la aussi ou on uttilise les fonctions de veirification si un membre peut rejoindre lequipe 
+    /// 
     /// </summary>
     public partial class FenAjoutEquipeCompet : Window, INotifyPropertyChanged
     {
@@ -156,7 +159,7 @@ namespace WpfTennis
             }
             if (e.PropertyName == "Club_Affilie")
             {
-                e.Column.IsReadOnly = true;
+                e.Column = null;
             }
            
             if (e.PropertyName == "NbVicSimple")
