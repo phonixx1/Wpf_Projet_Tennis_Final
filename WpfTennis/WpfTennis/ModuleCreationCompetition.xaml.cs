@@ -17,7 +17,8 @@ using ConsoleApp1;
 namespace WpfTennis
 {
     /// <summary>
-    /// Logique d'interaction pour ModuleCreationCompetition.xaml
+    /// module de gestion des equipes et de lancement d'une competition
+    /// on verifie que les critetres sur les equipes soit correct pour lancer la competition
     /// </summary>
     public partial class ModuleCreationCompetition : Window
     {

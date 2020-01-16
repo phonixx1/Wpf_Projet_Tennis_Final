@@ -22,7 +22,8 @@ using System.Reflection;
 namespace WpfTennis
 {
     /// <summary>
-    /// Logique d'interaction pour MainWindow.xaml
+    /// gestion de tous nos modules avec comme parametres important le club qui contient toutes les donnes
+    /// du projet membre competiton ect...
     /// </summary>
     public partial class MainWindow : Window
     {

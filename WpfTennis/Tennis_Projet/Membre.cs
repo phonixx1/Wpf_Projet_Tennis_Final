@@ -7,7 +7,14 @@ using System.ComponentModel;
 
 
 namespace ConsoleApp1
+    
 {
+    /// <summary>
+    /// Class la plus complete on a tous les parametres dun membre avec ses proprietes 
+    /// certaine fonction comme l'ajout dargent sur un compte ne sont pas utilise car on a pas eu le temps de le mettre sur wpf
+    /// on retrouve aussi une delegation pour les tris les focntions de calculs des points dun membre ect
+    /// </summary>
+    /// 
     public delegate int Comparison(Membre x, Membre y);   // delegation tri 
     public class Membre : Personne,IComparable<Membre>,IEquatable<Membre>, IToString
     {

@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
+    /// <summary>
+    /// class abstract qui est la base de mebre et entraineur 
+    /// on definti ici donc des criteres de base
+    /// </summary>
     public abstract class Personne: IEquatable<Personne>, IToString
     {
         protected string nom;

@@ -19,7 +19,8 @@ using System.ComponentModel;
 namespace WpfTennis
 {
     /// <summary>
-    /// Logique d'interaction pour ModuleMembres.xaml
+    /// Affichage de tous les membres ajout suppresion tri modification 
+    /// on utilise une datagrid et une observable collection pour afficher le tout
     /// </summary>
     public partial class ModuleMembres : Window, INotifyPropertyChanged
     {
