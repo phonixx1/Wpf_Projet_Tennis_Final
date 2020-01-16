@@ -234,5 +234,11 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Webp.net-resizeimage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="téléchargement %281%29.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

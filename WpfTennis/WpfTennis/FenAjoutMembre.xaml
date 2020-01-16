@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfTennis"
         mc:Ignorable="d"
         Title="FenAjoutMembre" Height="625" Width="600">
-    <Grid>
+    <Grid Background="#FFF0F0F0">
         <TextBox Name="txtBoxNom" HorizontalAlignment="Left" Height="25" Margin="300,20,0,0" TextWrapping="Wrap" Text="Nom" VerticalAlignment="Top" Width="200"/>
         <TextBox Name="txtBoxPrenom" HorizontalAlignment="Left" Height="25" Margin="300,80,0,0" TextWrapping="Wrap" Text="Prenom" VerticalAlignment="Top" Width="200"/>
         <TextBox Name="txtBoxSexe" HorizontalAlignment="Left" Height="25" Margin="300,140,0,0" TextWrapping="Wrap" Text="sexe" VerticalAlignment="Top" Width="200"/>

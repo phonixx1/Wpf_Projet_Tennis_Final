@@ -6,7 +6,10 @@
         xmlns:local="clr-namespace:WpfTennis"
         mc:Ignorable="d"
         Title="Chargement" Height="450" Width="800">
-    <Grid>
+    <Grid Opacity="0.75">
+        <Grid.Background>
+            <ImageBrush ImageSource="téléchargement (1).jpg"/>
+        </Grid.Background>
         <Label HorizontalAlignment="Left" Margin="281,51,0,0" VerticalAlignment="Top" Height="70" Width="285" FontSize="20" Content="          Charger un club" FontWeight="Bold"/>
         <Button  Name="btnChargerLesLillas" Click="btnChargerLesLillas_Click" HorizontalAlignment="Left" Margin="100,180,0,0" VerticalAlignment="Top" Width="155" Height="60">Les Lillas</Button>
         <Button Name="btnChargerAceClub" Click="btnChargerAceClub_Click"  HorizontalAlignment="Left" Margin="525,180,0,0" VerticalAlignment="Top" Width="155" Height="60">Ace Club</Button>

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfTennis"
         mc:Ignorable="d"
         Title="ModuleEnCoursCompetition" Height="200" Width="300">
-    <Grid>
+    <Grid Background="#FFF0F0F0">
         <Label Content="Vous avez depuis le debut de la session" HorizontalAlignment="Left" Margin="40,0,0,0" VerticalAlignment="Top" Height="25" Width="221"/>
         <TextBox Name="txtBoxNumero" HorizontalAlignment="Left" Height="23" Margin="81,83,0,0" TextWrapping="Wrap" Text="Numero en INT" VerticalAlignment="Top" Width="120"/>
         <Label Name="nombreCrée" Content="crée" HorizontalAlignment="Left" Margin="73,25,0,0" VerticalAlignment="Top" Width="158" Height="27"/>

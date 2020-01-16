@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfTennis"
         mc:Ignorable="d"
         Title="FenAjoutStage" Height="400" Width="600">
-    <Grid>
+    <Grid Background="#FFF0F0F0">
         <TextBox Name="txtBoxNom" HorizontalAlignment="Left" Height="25" Margin="300,20,0,0" TextWrapping="Wrap" Text="Nom du stage" VerticalAlignment="Top" Width="200"/>
         <TextBox Name="txtBoxPrix" HorizontalAlignment="Left" Height="25" Margin="300,80,0,0" TextWrapping="Wrap" Text="Prix" VerticalAlignment="Top" Width="200"/>
         <TextBox Name="txtBoxDebut" HorizontalAlignment="Left" Height="25" Margin="300,140,0,0" TextWrapping="Wrap" Text="Date de debut" VerticalAlignment="Top" Width="200"/>
