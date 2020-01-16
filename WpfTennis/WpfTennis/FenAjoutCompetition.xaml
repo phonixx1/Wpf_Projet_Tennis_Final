@@ -29,7 +29,7 @@
         <Label Content="equipe homme ou equipe femme" HorizontalAlignment="Left" Margin="62,272,0,0" VerticalAlignment="Top" Height="43" Width="199" Foreground="Green"/>
         <Label Content="double homme ou double femme" HorizontalAlignment="Left" Margin="62,256,0,0" VerticalAlignment="Top" Height="30" Width="199" Foreground="Green"/>
         <Label Content="regionnal,departemental,national.." HorizontalAlignment="Left" Margin="27,382,0,0" VerticalAlignment="Top" Width="216" Foreground="Green"/>
-        <Label Content="Nb joueur :Type = int" HorizontalAlignment="Left" Margin="27,440,0,0" VerticalAlignment="Top" Width="216" Foreground="Green"/>
+        <Label Content="Nb joueur :Type = int (pair si typecompet = double)" HorizontalAlignment="Left" Margin="10,440,0,0" VerticalAlignment="Top" Width="243" Foreground="Green" FontSize="10"/>
         <Label Content="Type = double si classement =15/4 mettre 15,4" HorizontalAlignment="Left" Margin="10,500,0,0" VerticalAlignment="Top" Width="233" Foreground="Green" FontSize="10"/>
 
     </Grid>

@@ -156,12 +156,13 @@ namespace ConsoleApp1
         {
             get { return equipes; }
         }
-
-        #endregion
         public List<Stage> Stage
         {
             get { return this.stage; }
         }
+
+        #endregion
+
         public override string ToString()
         {
             if (this.competition == double.NaN)

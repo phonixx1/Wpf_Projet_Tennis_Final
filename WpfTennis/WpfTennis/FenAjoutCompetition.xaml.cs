@@ -74,7 +74,13 @@ namespace WpfTennis
                 }
                 if (Convert.ToInt64(txtBoxNbJoueur.Text) <= 0)
                 {
-                    MessageBox.Show("Nb de joueur st superieur a 0 plz");
+                    MessageBox.Show("Nb de joueur soit superieur a 0 plz");
+                    throw new Exception();
+
+                }
+                if ((Convert.ToInt64(txtBoxNbJoueur.Text)%2!=0)&& ((txtBoxType.Text == "double femme")|| (txtBoxType.Text == "double homme")))
+                {
+                    MessageBox.Show("Nb de joueur pair pour une compet de type double");
                     throw new Exception();
 
                 }

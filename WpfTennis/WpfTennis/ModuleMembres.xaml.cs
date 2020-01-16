@@ -120,6 +120,10 @@ namespace WpfTennis
             {
                 e.Column = null;
             }
+            if (e.PropertyName == "Stage")
+            {
+                e.Column = null;
+            }
 
 
         }

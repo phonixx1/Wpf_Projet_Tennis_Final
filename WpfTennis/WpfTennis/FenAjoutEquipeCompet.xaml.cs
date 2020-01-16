@@ -18,7 +18,8 @@ using System.ComponentModel;
 namespace WpfTennis
 {
     /// <summary>
-    /// Logique d'interaction pour FenAjoutEquipeCompet.xaml
+    /// POur lajout des joueur pour une equipe on s'est aide dune date grid qui simplifie enormement l'interaction pour lajout 
+    /// on remarque aussi l'utilisation de observable collection qui sont bien plus pratique dans le maniment des datagrid
     /// </summary>
     public partial class FenAjoutEquipeCompet : Window, INotifyPropertyChanged
     {
@@ -51,6 +52,7 @@ namespace WpfTennis
             this.labelNbJoueur.Content = "Nombre de joueur : 0/" + Convert.ToString(compet.Nb_Joueur);
             ocMembre = new ObservableCollection<Membre>(this.listeMembre);
             aAjouter = new Equipe_Competition(this.competCourante);
+            grilleDonnees.IsReadOnly = true;
             DataContext = this;
         }
         public List<Membre> ListeMembre
@@ -145,6 +147,37 @@ namespace WpfTennis
         private void GenerePropertyChanged(string Propriete)
         {
             if (this.PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs(Propriete));
+        }
+        private void dataGrid1_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            if (e.PropertyName == "Equipes")
+            {
+                e.Column = null;
+            }
+            if (e.PropertyName == "Club_Affilie")
+            {
+                e.Column.IsReadOnly = true;
+            }
+           
+            if (e.PropertyName == "NbVicSimple")
+            {
+                e.Column = null;
+            }
+            if (e.PropertyName == "NbVicDouble")
+            {
+                e.Column = null;
+            }
+            
+            if (e.PropertyName == "Stage")
+            {
+                e.Column = null;
+            }
+            if (e.PropertyName == "Adresse")
+            {
+                e.Column = null;
+            }
+
+
         }
     }
 }

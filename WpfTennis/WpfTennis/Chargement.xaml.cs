@@ -18,7 +18,8 @@ using System.Reflection;
 namespace WpfTennis
 {
     /// <summary>
-    /// Logique d'interaction pour Chargement.xaml
+    /// On est dans le module de chargement des clubs cest donc dans les fonctions de chargement que l'on ouvre
+    /// les fichiers excel pour leur lecture 
     /// </summary>
     public partial class Chargement : Window
     {

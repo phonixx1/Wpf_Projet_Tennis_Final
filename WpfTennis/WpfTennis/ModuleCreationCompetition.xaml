@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:WpfTennis"
         mc:Ignorable="d"
         Title="ModuleCreationCompetition" Height="600" Width="800">
-    <Grid>
+    <Grid Opacity="0.8">
+        
+
 
         <Button Name="btnRetourMainWindow" Click="btnRetourMainWindow_Click"  HorizontalAlignment="Left" Margin="329,495,0,0" VerticalAlignment="Top" Width="150" Height="40" Foreground="Red" FontWeight="Bold">Retour Menu Principal</Button>
         <Button Name="btnStrat" Click="btnStrat_Click"  Content="Lancer competition" HorizontalAlignment="Left" Height="48" Margin="539,257,0,0" VerticalAlignment="Top" Width="140"/>

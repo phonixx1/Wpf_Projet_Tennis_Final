@@ -7,16 +7,20 @@ using System.Windows.Forms;
 
 namespace ConsoleApp1
 {
+    /// <summary>
+    /// Dasn cette classe on gere l'ajout d'un membre a une competition donc on verifie les paramtres du membres et on definit sil peut ou
+    /// non participer a la competition pour laquelle l'equipe est enagée
+    /// </summary>
     public class Equipe_Competition
     {
         Competition competition_engagee;
         Membre capitaine;
         List<Membre> composition_Equipe=new List<Membre>();
-        int[] tab_points_joueurs;
-        int points_equipe;
+        int[] tab_points_joueurs;  // point par joueur
+        int points_equipe;// point dequipe
 
-        public Equipe_Competition( Competition compet) // on cree l'equipe avec le capitaine il choisira le reste de lequipe plus tard ou prend son tps pour selectionner
-                                                                   // et la compet car une equipe s'engage pour une compet
+        #region Constructeurs
+        public Equipe_Competition( Competition compet) // dans ce cas le capitaine sera le premier membre ajouté a lequipe
         {
             this.competition_engagee = compet;
             
@@ -59,6 +63,8 @@ namespace ConsoleApp1
                 }
             }
         }
+        #endregion
+        #region Proprietes
         public Membre Capitaine
         {
             get { return capitaine; }
@@ -79,6 +85,7 @@ namespace ConsoleApp1
             get { return points_equipe; }
             set { this.points_equipe = value; }
         }
+        #endregion
         public void Ajout_Points(int indice_joueur, int points)
         {
             tab_points_joueurs[indice_joueur] += points;

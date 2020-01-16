@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 namespace WpfTennis
 {
     /// <summary>
-    /// Logique d'interaction pour FenAide.xaml
+    /// Il devait y avoir toutes les aides pour le logiciel mais  on a pas eu le temps et c'etait pas prioritaire...
     /// </summary>
     public partial class FenAide : Window
     {

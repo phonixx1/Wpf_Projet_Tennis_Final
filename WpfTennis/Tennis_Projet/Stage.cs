@@ -9,8 +9,8 @@ namespace ConsoleApp1
 {
     public class Stage : Evenement
     {
-        List<Membre> membres_participants;
-        Entraineur liste_entraineur;
+       // List<Membre> membres_participants;
+        //Entraineur liste_entraineur;
         Club orga;
         public Stage(string nom, int prix, DateTime debut, TimeSpan duree, Club organisateur)
     : base(nom, prix, debut, duree)

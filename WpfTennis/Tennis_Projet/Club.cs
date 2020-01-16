@@ -8,6 +8,11 @@ using System.Reflection;
 
 namespace ConsoleApp1
 {
+    /// <summary>
+    /// Class club :2 interfaces une c# pour la comparaison et une que l'on a fait pour implementer le ToString
+    /// Sinon la class a une methode importante pour l'ajout de membre 
+    /// Sinon cest ses propiretes et constructeur
+    /// </summary>
     public class Club: IComparable<Club>,IToString
     {
         string nom_du_club;
@@ -15,7 +20,7 @@ namespace ConsoleApp1
         string ville;
         int code_postal;
         List<Personne_Administration> groupe_administratif;
-        List<Entraineur> liste_entraineur;
+        List<Entraineur> liste_entraineur;// on a separe entraineur et membre juste pour faciliter l'affichage mais les entraineurs sont des membres
         List<Membre> liste_membre;
         List<Competition> liste_compet=new List<Competition>();
 

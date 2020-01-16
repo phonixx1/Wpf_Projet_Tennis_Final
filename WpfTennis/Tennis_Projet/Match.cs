@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
+    /// <summary>
+    /// class abstract mere des deux type de match possible
+    /// </summary>
     public abstract class Match
     {
         Equipe_Competition equipe1;

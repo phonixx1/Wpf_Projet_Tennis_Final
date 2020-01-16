@@ -16,7 +16,7 @@ using ConsoleApp1;
 namespace WpfTennis
 {
     /// <summary>
-    /// Logique d'interaction pour FenAjoutAdministration.xaml
+    /// Toutes les fenetres du type "FenAjout..." sont les affichages des ajouts on reucpere et on cree les entrees de lutilisateur 
     /// </summary>
     public partial class FenAjoutAdministration : Window
     {

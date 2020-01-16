@@ -6,26 +6,19 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
+    /// <summary>
+    /// Class entraineur qui herite de memebre
+    /// On remarqe juste que le statut salarie demande des parametres en plus qui sont nuls si lentraineur nest pas salarie
+    /// Lors de la creation d'un entraineur vous aurez juste a ne pas remplir les champs correspondants a salaire banque et date d'entree
+    /// </summary>
     public class Entraineur :Membre
     {
-        //List<Cours> liste_cours;
+        
         bool statut_salarie; // si true salarie si false independant
         double salaire = double.NaN;
         DateTime dateEntree;
-        string coordonneesBancaire;
-        /*public Entraineur(string nom, string prenom, string sexe, string adresse, string ville, DateTime date_naissance,string numero_telephone, Club nom_du_club, int argent_depart, double competition,bool statut,double salaire,DateTime dateEntree,string banque,  List<Cours> liste_cours)
-            : base(nom, prenom, sexe, adresse, ville, date_naissance, numero_telephone, nom_du_club, argent_depart, competition)
-        {
-            this.liste_cours = liste_cours;
-            this.statut_salarie = statut;
-            if(this.statut_salarie==true)
-            {
-                this.salaire = salaire;
-                this.dateEntree = dateEntree;
-                this.coordonneesBancaire = banque;
-            }
-
-        }*/
+        string coordonneesBancaire=string.Empty;
+        
         public Entraineur(string nom, string prenom, string sexe, string adresse, string ville, DateTime date_naissance, string numero_telephone, Club nom_du_club, int argent_depart, double competition,bool cotis, bool statut, double salaire, DateTime dateEntree,string banque)
             : base(nom, prenom, sexe, adresse, ville, date_naissance,numero_telephone, nom_du_club, argent_depart, competition,cotis)
         {
@@ -33,9 +26,9 @@ namespace ConsoleApp1
             if (this.statut_salarie == true)
             {
                 this.salaire = salaire;
-                this.dateEntree = dateEntree;
                 this.coordonneesBancaire = banque;
-                
+                this.dateEntree = dateEntree;
+
             }
             
         }

@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
+    /// <summary>
+    /// Une des grosses classes class du projet qui herite de evenement
+    /// Cette class gere tous les aspects d'une competition
+    /// </summary>
     public class Competition : Evenement , IEquatable<Competition>
     {
         bool compet_finie = false;
@@ -16,7 +20,7 @@ namespace ConsoleApp1
 
         string niveau_france; // region departement national
 
-        int nb_joueur;
+        int nb_joueur; // nb de joueur par equipe dans cette competition
 
         double classement_max;
 
@@ -29,7 +33,8 @@ namespace ConsoleApp1
         List<Equipe_Competition> equipes_participantes;
         List<Match> liste_match;
         List<Membre> listeMembreGagnant = new List<Membre>();
-        //List<Membre> joueur_a_deja_joue=null;  //stock les joueurs qui ont deja joué (car un joueur ne peut jouer qu'une fois par compet)
+
+        #region Constructeurs
         public Competition(string nom, int prix, DateTime debut, TimeSpan duree,Club organisateur,string type_competition,int tranche_age,string niveau,int nb_joueur,double classement_max) 
             : base(nom, prix, debut, duree)
         {
@@ -57,6 +62,8 @@ namespace ConsoleApp1
             this.equipes_participantes = equipes;
             
         }
+        #endregion
+        #region proprietes
         public List<Membre> ListeMembreGagnant
         {
             get { return this.listeMembreGagnant; }
@@ -89,7 +96,10 @@ namespace ConsoleApp1
             get { return this.type_competition; }
             
         }
-       public bool Ajouter_Equipe(Equipe_Competition equipe_Aajouter) // return true si l'equipe a ete ajouter false sinn
+        #endregion
+
+        #region Ajouts d'equipes, de matchs et veirifications diverses 
+        public bool Ajouter_Equipe(Equipe_Competition equipe_Aajouter) // return true si l'equipe peut etre ajoutée false sinn
         {
             bool ajout_reussi=false;
             if(this==equipe_Aajouter.Competition_engagee && equipe_Aajouter.Composition_Equipe.Count == nb_joueur)
@@ -99,6 +109,7 @@ namespace ConsoleApp1
 
             return ajout_reussi;
         }
+
         public void Ajouter_Match_Simple(Equipe_Competition equipe1, Equipe_Competition equipe2, int indice_joueur_equipe1, int indice_joueur_equipe2)
         {
             liste_match.Add(new Match_Simple(equipe1, equipe2, indice_joueur_equipe1, indice_joueur_equipe2, "match simple"));
@@ -107,6 +118,11 @@ namespace ConsoleApp1
         {
             liste_match.Add(new Match_Double(equipe1, equipe2, indice_joueur1_equipe1, indice_joueur1_equipe2, indice_joueur2_equipe1, indice_joueur2_equipe2, "match double"));
         }
+
+        /// <summary>
+        /// foction crée pour lancer une competition qui a ete change dans la section wpf
+        /// </summary>
+        
         public void Lancement_Compet(List<Equipe_Competition> equipe_gagnante, List<Membre> membre_gagnant)
         {
             Match_Simple test_match_simple = new Match_Simple();
@@ -135,7 +151,11 @@ namespace ConsoleApp1
             }
             compet_finie = true;
         }
-
+        /// <summary>
+        /// les 3 fonctions qui suivent verifie si un joueur n'est pas deje assigné dans un match 
+        /// car un joueur peut jouer qu'une seule fois par competition
+        /// </summary>
+        
         public bool Nb_dispo1(int nb_aleatoire, List<int> liste_nombre_restants)
         {
             bool dispo = false;
@@ -162,6 +182,7 @@ namespace ConsoleApp1
             }
             return dispo;
         }
+
         public int Nb_dispo_double(int nb_aleatoire1, List<int> liste_nombre_restants)
         {
             int indice = -1;
@@ -174,6 +195,13 @@ namespace ConsoleApp1
             }
             return indice;
         }
+        #endregion
+
+        /// <summary>
+        /// c'est dans cette fonction que notre liste de match est crée pour une competition
+        /// elle crée des matchs aleatoirement en verifiant que les membres ne soit pas de la meme equipes
+        /// et surtout en fonction du type de competition qui se deroule
+        /// </summary>
         public void Creation_Liste_Match()
         {
             int nb_aleatoire1;
@@ -327,13 +355,13 @@ namespace ConsoleApp1
                 }
             }
         }
-        #region equals et operaator
+        
         public bool Equals(Competition other) // 2compet egales si meme nom, dates, niveau et tranche age
         {
             return ((this.nom_de_evenement == other.nom_de_evenement) && (this.date_debut_evenement == other.date_debut_evenement) && (this.date_fin_evenement == other.date_fin_evenement) && (this.niveau_france == other.niveau_france) && (this.tranche_age == other.tranche_age));
         }
         
-        #endregion
+        
 
 
 
