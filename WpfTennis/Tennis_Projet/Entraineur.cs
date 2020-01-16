@@ -18,7 +18,8 @@ namespace ConsoleApp1
         double salaire = double.NaN;
         DateTime dateEntree;
         string coordonneesBancaire=string.Empty;
-        
+        List<Cours> liste_cours = new List<Cours>();
+
         public Entraineur(string nom, string prenom, string sexe, string adresse, string ville, DateTime date_naissance, string numero_telephone, Club nom_du_club, int argent_depart, double competition,bool cotis, bool statut, double salaire, DateTime dateEntree,string banque)
             : base(nom, prenom, sexe, adresse, ville, date_naissance,numero_telephone, nom_du_club, argent_depart, competition,cotis)
         {
@@ -49,6 +50,7 @@ namespace ConsoleApp1
         {
             get { return this.coordonneesBancaire; }
         }
+        
 
         #endregion
     }

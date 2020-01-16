@@ -107,6 +107,10 @@ namespace WpfTennis
             {
                 e.Column = null;
             }
+            if (e.PropertyName == "Liste_cours")
+            {
+                e.Column = null;
+            }
             
 
 

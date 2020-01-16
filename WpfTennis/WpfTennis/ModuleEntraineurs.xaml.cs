@@ -111,6 +111,18 @@ namespace WpfTennis
             {
                 e.Column = null;
             }
+            if (e.PropertyName == "Liste_cours")
+            {
+                e.Column = null;
+            }
+            if (e.PropertyName == "NbVicSimple")
+            {
+                e.Column = null;
+            }
+            if (e.PropertyName == "NbVicDouble")
+            {
+                e.Column = null;
+            }
 
         }
         
