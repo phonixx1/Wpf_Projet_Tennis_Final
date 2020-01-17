@@ -64,11 +64,14 @@ namespace WpfTennis
         {
             try
             {
+                
                 int resultat = Convert.ToInt32(txtBoxGagnant.Text);
                 if(resultat==1||resultat==2)
                 {
+                    
                     if (simple == true)
                     {
+                        
                         if (resultat == 1)
                         {
                             this.equipegagnante = matchSimple.Equipe1;
@@ -85,21 +88,26 @@ namespace WpfTennis
                     }
                     else
                     {
+                        
                         if (resultat == 1)
                         {
-                            this.equipegagnante = matchSimple.Equipe1;
+                            this.equipegagnante = matchDouble.Equipe1;
                             this.matchDouble.Equipe1.Composition_Equipe[matchDouble.Indice_joueur1_equipe1].NbVicDouble++;
                             this.matchDouble.Equipe1.Composition_Equipe[matchDouble.Indice_joueur2_equipe1].NbVicDouble++;
                         }
                         else
                         {
-                            this.equipegagnante = matchSimple.Equipe2;
+                            this.equipegagnante = matchDouble.Equipe2;
                             this.matchDouble.Equipe2.Composition_Equipe[matchDouble.Indice_joueur1_equipe2].NbVicDouble++;
                             this.matchDouble.Equipe2.Composition_Equipe[matchDouble.Indice_joueur2_equipe2].NbVicDouble++;
                         }
                         this.equipegagnante.Points_Equipe += 2;
                     }
                     this.DialogResult = true;
+                }
+                else
+                {
+                    throw new Exception();
                 }
                 
 

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfTennis"
         mc:Ignorable="d"
         Title="ModuleCreationCompetition" Height="600" Width="800">
-    <Grid Opacity="0.6">
+    <Grid Opacity="0.8">
         <Grid.Background>
             <ImageBrush ImageSource="images.jpg"/>
         </Grid.Background>

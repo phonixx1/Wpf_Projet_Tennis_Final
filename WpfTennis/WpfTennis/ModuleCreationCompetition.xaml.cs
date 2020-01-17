@@ -112,7 +112,7 @@ namespace WpfTennis
                             }
                             
                         }
-                        MessageBox.Show("Lequipe numero " + Convert.ToString(numeroGagnant) + " a gagné et son capitaine est " + Convert.ToString(gagnant.Capitaine.Nom));
+                        MessageBox.Show("Lequipe dont le capitaine est " + Convert.ToString(gagnant.Capitaine.Nom)+" a gagné");
                         competCree.Compet_finie = true;
                         MessageBox.Show("La competition est finie");
                         this.DialogResult = true;
