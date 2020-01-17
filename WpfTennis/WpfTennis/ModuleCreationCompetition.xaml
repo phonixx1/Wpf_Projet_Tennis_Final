@@ -6,8 +6,11 @@
         xmlns:local="clr-namespace:WpfTennis"
         mc:Ignorable="d"
         Title="ModuleCreationCompetition" Height="600" Width="800">
-    <Grid Opacity="0.8">
-        
+    <Grid Opacity="0.6">
+        <Grid.Background>
+            <ImageBrush ImageSource="images.jpg"/>
+        </Grid.Background>
+
 
 
         <Button Name="btnRetourMainWindow" Click="btnRetourMainWindow_Click"  HorizontalAlignment="Left" Margin="329,495,0,0" VerticalAlignment="Top" Width="150" Height="40" Foreground="Red" FontWeight="Bold">Retour Menu Principal</Button>
