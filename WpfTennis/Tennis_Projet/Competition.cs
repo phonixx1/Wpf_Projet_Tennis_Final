@@ -249,7 +249,7 @@ namespace ConsoleApp1
                         nb_aleatoire3 = indice_equipe1 * nb_joueur;
                         if (nb_aleatoire3 == nb_aleatoire1)
                         {
-                            nb_aleatoire3 = nb_aleatoire1 + 1;
+                            nb_aleatoire3 = nb_aleatoire3 + 1;
                         }
                         if (Nb_dispo_double(nb_aleatoire1, liste_nombre_possible) != -1)
                         {
@@ -310,7 +310,7 @@ namespace ConsoleApp1
                         nb_aleatoire3 = indice_equipe1 * nb_joueur;
                         if (nb_aleatoire3 == nb_aleatoire1)
                         {
-                            nb_aleatoire3 = nb_aleatoire1 + 1;
+                            nb_aleatoire3 = nb_aleatoire3 + 1;
                         }
                         if (Nb_dispo_double(nb_aleatoire1, liste_nombre_possible) != -1)
                         {
