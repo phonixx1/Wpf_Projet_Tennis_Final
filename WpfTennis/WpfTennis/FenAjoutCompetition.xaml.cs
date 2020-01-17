@@ -84,6 +84,12 @@ namespace WpfTennis
                     throw new Exception();
 
                 }
+                if ((Convert.ToInt64(txtBoxNbJoueur.Text) <2) && ((txtBoxType.Text == "equipe femme") || (txtBoxType.Text == "equipe homme")))
+                {
+                    MessageBox.Show("Pour une compet equipe le nombre de joueur par equipe doit etre superieur a 1");
+                    throw new Exception();
+
+                }
 
 
                 aAjouter = new Competition(txtBoxNom.Text, Convert.ToInt32(txtBoxPrix.Text), Convert.ToDateTime(txtBoxDebut.Text), duree,this.clubOrgaisateur,type,Convert.ToInt32(txtBoxAge.Text),txtBoxNiveau.Text,Convert.ToInt32(txtBoxNbJoueur.Text),Convert.ToDouble(txtBoxClassement.Text));
